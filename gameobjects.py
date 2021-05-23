@@ -18,10 +18,10 @@ class SceneArea(GameEntity):
         self.area = pos, size
         self.render_list = []
         
-    def create(self):
+    def create_gamesurface(self):
         pass
         
-    def _add_gamesurface(self, gamesurface):
+    def add_gamesurface(self, gamesurface):
         print((gamesurface.surface, gamesurface.pos))
         self.render_list.append([gamesurface.surface, gamesurface.pos])
         
@@ -37,10 +37,9 @@ class SceneArea(GameEntity):
         
 class SceneAreaObject(GameEntity):
 
-    def __init__(self, scenearea, pos):
+    def init(self, scenearea, pos):
         self.scenearea = scenearea
         self.pos = Vec(pos)
-        super().__init__()
 
     def move(self, dx, dy):
         self.pos[0] += dx

@@ -94,6 +94,7 @@ class DataManager:
     def _load(self, name):
         path = self.files[name]
         ext = path.suffix
+        data = None
         if ext == '.json':
             with path.open('r') as file:
                 try:
@@ -102,7 +103,8 @@ class DataManager:
                     data = {}
         if ext == '.png':
             data = GameImage(path)
-        self.data[name] = data
+        if data:
+            self.data[name] = data
         
     def save(self, pathname):
         try:
