@@ -5,8 +5,8 @@
 "DataConfig":
 	{
 		"_preload":[
-			".\\data\\map\\map.json",
-			".\\data\\scenes.json"
+			".//data//map//map.json",
+			".//data//scenes.json"
 		]
 	}
 }

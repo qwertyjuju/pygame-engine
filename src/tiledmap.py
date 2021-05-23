@@ -5,7 +5,7 @@ from pygame.math import Vector2 as Vec
 from gameentity import GameEntity
 from gameobjects import *
 import math
-
+from pathlib import Path
 
 class TiledMap(SceneObject):
     def init(self, filename, sceneareaid, sceneareasize, sceneareapos):
@@ -88,14 +88,13 @@ class Tileset(TiledObject):
     def init(self, firstgid, source):
         self.firstgid = firstgid
         self.source = source
-        self.path = self.tiledmap.path+'\\'+self.source
+        self.path = self.tiledmap.path / Path(self.source)
 
-        
     def load(self):
-        self.engine.datamanager.createfile(self.path, load = True)
+        self.engine.datamanager.createfile(self.path, load=True)
         self.data = self.get_data(self.source)
-        self.imagepath = self.tiledmap.path+'\\'+self.data['image']
-        self.engine.datamanager.createfile(self.imagepath,load =True)
+        self.imagepath = self.tiledmap.path / Path(self.data['image'])
+        self.engine.datamanager.createfile(self.imagepath, load=True)
         self.image = self.get_data(self.data['image'])['img']
         self.create_tiles()
         
