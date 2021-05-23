@@ -1,85 +1,71 @@
-import sys
-from pathlib import Path
-
-current_dir = Path.cwd()
-src_dir = Path.joinpath(current_dir, 'src')
-data_dir = Path.joinpath(current_dir, 'data')
-if src_dir.exists():
-    sys.path.insert(0, str(src_dir))
-    try:
-        import src
-    except ImportError:
-        print('src package not imported')
-else:
-    print('no src package found')
-
 
 def get_subclass(cls):
     return cls.__subclasses__()
 
-
 def get_subclasses(cls):
-    classes = {}
+    classes={}
     for subclass in get_subclass(cls):
         subclassname = subclass.__name__
-        classes[subclassname] = subclass
+        classes[subclassname]= subclass
         if get_subclass(subclass):
             classes.update(get_subclasses(subclass))
     return classes
 
-
 class GameEntity:
     """
-    Base class of all game entities. Each game entity as access to the engine.
-    If the Engine was not initialized, no objects will be created. Each game entity
+    Base class of all game entitys. Each game entity as acces to the engine.
+    If the Engine was not initialized, no onjects will be created. Each game entity
     has an automatic distributed ID.
-    Each entity is added in a dictionary.
     """
     engine = None
-    _nbentity = 0
-    _subclassdict = None
+    nbentity = 0
+    entitydict = None
+    events = None
 
     def __new__(cls, *args, **kwargs):
-        if GameEntity.engine is None:
+        if GameEntity.engine == None:
             print('Engine not initialized, Object not created')
             return
         else:
             return super().__new__(cls)
-
-    def __init__(self, *args, **kwargs):
-        self.ID = GameEntity._nbentity
-        GameEntity._nbentity += 1
-        self._update = False
-        if 'update' in dir(self):
-            self.set_update(True)
-        self.init(*args, **kwargs)
-
-    def init(self, *args, **kwargs):
+    
+    def __init__(self):
+        self.engine = GameEntity.engine
+        self._ID= GameEntity.nbentity
+        GameEntity.nbentity+=1
+        self.statedict= {
+            'update': False,
+        }
+        try:
+            self.update
+        except AttributeError:
+            pass
+        else:
+            self.statedict['update'] = True
+            
+    def run(self):
+        self.events = GameEntity.events
+        self.__update__()
+        
+    def __update__(self):
+        if self.statedict['update']:
+            self.update()
+            
+    def get_data(self,dataname):
+        try:
+            self.engine.datamanager[dataname]
+        except KeyError:
+            print('data not found. File was not loaded')
+            return
+        else:
+            return self.engine.datamanager[dataname]
+        
+    def remove_data(self, dataname):
         pass
-
-    def set_update(self, value):
-        """
-        Sets the entity _update attribute to the value. The entity is also 
-        added or deleted from the engine update list.
-        """
-        if value:
-            self.engine.add_updatedentity(self)
-            self._update = True
-        if not value:
-            self.engine.del_updatedEntity(self)
-            self._update = False
-
-    def __del__(self):
-        if self._update:
-            self.engine.del_updatedentity(self)
-
-    @classmethod
+        
+    @classmethod    
     def get_subclasses(cls):
-        """
-        Gets all the classes that inherits from GameEntity. This method must be called on
-        the engine init.
-        """
-        cls._subclassdict = get_subclasses(cls)
+        cls.entitydict = get_subclasses(cls)
+                        
 
-
-GameEntity.get_subclasses()
+        

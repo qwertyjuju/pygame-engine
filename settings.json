@@ -1,13 +1,12 @@
 { "Settings":
 	{
-		"screensize":[1800,1024],
-		"fullscreen":null
+		"screensize":[1800,1024]
 	},
 "DataConfig":
 	{
 		"_preload":[
-			".\\data\\map\\map.json"
+			".\\data\\map\\map.json",
+			".\\data\\scenes.json"
 		]
-	},
-"Scenes": null
+	}
 }

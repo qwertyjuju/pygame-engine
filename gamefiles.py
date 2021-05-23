@@ -28,7 +28,18 @@ class GameFile:
         data['_dir'] = str(self.dir)
         self.manager.add_data(self, data)
 
-
+class GameImage:
+    def __init__(self, imageloc):
+        self.loc= imageloc
+        self.load()
+    
+    def load(self):
+        self.image = pg.image.load(self.loc).convert_alpha()
+        
+    def get_tile(self, x,y, size):
+        newsurf = pg.Surface((size),SRCALPHA).convert_alpha()
+        newsurf.blit(self.image,(-x,-y))
+        return newsurf
     
 class Spritesheet:
     pass
