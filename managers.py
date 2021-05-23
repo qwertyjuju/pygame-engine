@@ -44,7 +44,7 @@ class DisplayManager:
 
 class DataManager:
     """
-    Data Manager.
+    Data Manager. All game data is stored in the data manager
     """
 
     def __init__(self, configfile=None):
