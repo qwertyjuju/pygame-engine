@@ -1,0 +1,22 @@
+{ "columns":16,
+ "editorsettings":
+    {
+     "export":
+        {
+         "format":"",
+         "target":"."
+        }
+    },
+ "image":"forest.png",
+ "imageheight":384,
+ "imagewidth":1024,
+ "margin":0,
+ "name":"forest",
+ "spacing":0,
+ "tilecount":96,
+ "tiledversion":"1.4.2",
+ "tileheight":64,
+ "tilewidth":64,
+ "type":"tileset",
+ "version":1.4
+}

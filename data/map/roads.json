@@ -1,0 +1,22 @@
+{ "columns":4,
+ "editorsettings":
+    {
+     "export":
+        {
+         "format":"",
+         "target":"."
+        }
+    },
+ "image":"roads.png",
+ "imageheight":192,
+ "imagewidth":256,
+ "margin":0,
+ "name":"roads",
+ "spacing":0,
+ "tilecount":12,
+ "tiledversion":"1.4.2",
+ "tileheight":64,
+ "tilewidth":64,
+ "type":"tileset",
+ "version":1.4
+}

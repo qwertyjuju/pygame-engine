@@ -1,0 +1,14 @@
+{ "columns":5,
+ "image":"lakes.png",
+ "imageheight":896,
+ "imagewidth":320,
+ "margin":0,
+ "name":"lakes",
+ "spacing":0,
+ "tilecount":70,
+ "tiledversion":"1.4.2",
+ "tileheight":64,
+ "tilewidth":64,
+ "type":"tileset",
+ "version":1.4
+}

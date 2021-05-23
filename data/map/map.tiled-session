@@ -1,0 +1,278 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "map.json",
+    "automapping.whileDrawing": false,
+    "expandedProjectPaths": [
+        "C:/Users/LaPoutre/Dropbox/perso/game/test/map"
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Program Files/Tiled/examples/desert.tmx": {
+            "scale": 0.6709375,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 640.14904517932,
+                "y": 836.1434559850954
+            }
+        },
+        "C:/Program Files/Tiled/examples/desert.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/data/workspace/forest.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/data/workspace/map1.json": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 3775.333333333333,
+                "y": 2623.333333333333
+            }
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/data/workspace/map2.json": {
+            "scale": 0.33,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 1886.3636363636365,
+                "y": 942.4242424242425
+            }
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/data/workspace/quest flag.json": {
+            "scaleInDock": 1
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/data/workspace/roads.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/data/workspace/settlements.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/data/workspace/terrains.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/data/workspace/tileset.json": {
+            "scaleInDock": 1
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/data/workspace/world.json": {
+            "scale": 3,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 494.5,
+                "y": 358.66666666666663
+            }
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/grasstileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/map.tmx": {
+            "scale": 0.125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 3164,
+                "y": 3196
+            }
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/test/map/chest1.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/test/map/grass_tileset1.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/test/map/map1.json": {
+            "scale": 0.33,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 3198.484848484848,
+                "y": 3198.4848484848485
+            }
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/test/map/map2.json": {
+            "scale": 0.25,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 3166,
+                "y": 3196
+            }
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/test/map/object_tileset1.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/test/map2/map.json": {
+            "scale": 3,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 3167.833333333333,
+                "y": 3199.6666666666665
+            }
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/test/map2/map1.json": {
+            "scale": 0.125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 3644,
+                "y": 2328
+            }
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/test/map2/map2.json": {
+            "scale": 16,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 370.53125,
+                "y": 324.375
+            }
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/test/map2/quest flag.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/test/map2/tileset.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/test/map3/map.json": {
+            "scale": 0.75,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 876.6666666666667,
+                "y": 722.6666666666665
+            }
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/test/map3/object_tileset1.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/LaPoutre/Dropbox/perso/game/test/map3/untitled.json": {
+            "scale": 0.2026171875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1251.1278195488721,
+                "y": 1026.5664160401004
+            }
+        },
+        "aesprites/BACKUPS/forest.json": {
+            "scaleInDock": 1
+        },
+        "aesprites/BACKUPS/lakes.tsx": {
+            "scaleInDock": 1
+        },
+        "aesprites/BACKUPS/map.json": {
+            "scale": 0.03839111328125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 4623.465818759936,
+                "y": 7697.093799682036
+            }
+        },
+        "aesprites/BACKUPS/roads.json": {
+            "scaleInDock": 1
+        },
+        "aesprites/BACKUPS/settlements.json": {
+            "scaleInDock": 1
+        },
+        "aesprites/BACKUPS/terrains.json": {
+            "scaleInDock": 1
+        },
+        "forest.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "lakes.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "lakes.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "map.json": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 10103,
+                "y": 5944
+            }
+        },
+        "map2.json": {
+            "scale": 0.125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -1300,
+                "y": 1944
+            }
+        },
+        "objects.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "roads.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "settlements.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "terrains.json": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.75,
+            "scaleInEditor": 1
+        },
+        "untitled.json": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -31.5,
+                "y": 304
+            }
+        }
+    },
+    "loadedWorlds": [
+        "C:/Users/LaPoutre/Dropbox/perso/game/data/map/world.world"
+    ],
+    "map.fixedSize": false,
+    "map.height": 82,
+    "map.lastUsedFormat": "json",
+    "map.orientation": null,
+    "map.tileHeight": 64,
+    "map.tileWidth": 64,
+    "map.width": 118,
+    "openFiles": [
+        "map.json"
+    ],
+    "project": "map.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "map.json",
+        "untitled.json",
+        "map2.json",
+        "terrains.json",
+        "lakes.json",
+        "aesprites/BACKUPS/map.json",
+        "map1.json",
+        "settlements.json",
+        "roads.json",
+        "lakes.tsx",
+        "forest.json",
+        "objects.json"
+    ],
+    "tileset.lastUsedFilter": "JSON tileset files (*.json)",
+    "tileset.lastUsedFormat": "json",
+    "tileset.tileSize": {
+        "height": 64,
+        "width": 64
+    }
+}

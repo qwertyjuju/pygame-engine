@@ -1,0 +1,15 @@
+{"scenes":[
+	{
+	"id":0,
+	"objects":[
+		{
+		"objectname":"tiledmap",
+		"paramlist":[
+			[1664,960],
+			[0,0]
+			]
+		}
+	]
+	}
+	]
+}
