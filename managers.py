@@ -9,11 +9,11 @@ class DisplayManager:
         self.engine = engine
         self.scenes = {}
         try:
-            self.engine['Settings']['screensize']
+            self.engine['settings']['screensize']
         except KeyError:
             self.screensize = (900, 900)
         else:
-            self.screensize = self.engine['Settings']['screensize']
+            self.screensize = self.engine['settings']['screensize']
         self.screen = pg.display.set_mode(self.screensize)
         self.caption = "pygame"
 
@@ -47,12 +47,14 @@ class DataManager:
     Data Manager. All game data is stored in the data manager
     """
 
-    def __init__(self, configfile=None):
+    def __init__(self, engine, configfile=None):
+        self.engine = engine
         self.configfile = configfile
         self.files = {}
         self.data = {}
         self.mainPath = Path.cwd()
         self.set_path(self.mainPath)
+        self.engine.log("info", "Datamanager initialised")
         
     def set_path(self, search_path):
         for path in search_path.iterdir():
@@ -89,7 +91,6 @@ class DataManager:
         else:
             self._load(path_name)
         if get:
-            print(self.data[path_name])
             return self.data[path_name]
             
     def _load(self, name):
@@ -106,6 +107,7 @@ class DataManager:
             data = GameImage(path)
         if data:
             self.data[name] = data
+            self.engine.log("info", "file : "+ name + "loaded successfully")
         
     def save(self, pathname):
         try:

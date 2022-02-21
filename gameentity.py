@@ -64,3 +64,4 @@ class GameEntity:
         the engine init.
         """
         cls._subclassdict = get_subclasses(cls)
+        print(cls._subclassdict)

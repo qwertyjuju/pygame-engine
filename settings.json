@@ -1,12 +1,13 @@
-{ "Settings":
+{	"settings":
 	{
 		"screensize":[1800,1024],
-		"fullscreen":null
+		"fullscreen":null,
+		"logging": true
 	},
-"DataConfig":
+	"DataConfig":
 	{
 		"_preload":[
 		]
 	},
-"Scenes": null
+	"Scenes": null
 }

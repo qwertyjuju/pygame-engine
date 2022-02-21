@@ -2,6 +2,7 @@
 # import inspect
 import sys
 import weakref
+import logging
 from pathlib import Path
 import pygame as pg
 import managers
@@ -22,7 +23,7 @@ if src_dir.exists():
 else:
     print('no src package found')
 
-__version__ = '0.2'
+__version__ = "0.2"
 
 
 class Engine:
@@ -35,14 +36,17 @@ class Engine:
         self.events = None
         self.updatedict = {}
         self.updatelist = self.updatedict.values()
-        self.datamanager = managers.DataManager()
+        self.datamanager = managers.DataManager(self)
         self.config = self.load_data(configfilepath, get=True)
-        print(self.config)
-        for path in self.config['DataConfig']['_preload']:
+        for path in self['DataConfig']['_preload']:
             self.load_data(path)
+        if self['settings']['logging']:
+            print("bite")
+            logging.basicConfig(filename='engine_v'+__version__+'.log', format='%(asctime)s %(message)s', encoding='utf-8', level=logging.DEBUG, filemode='x')
         self.displaymanager = managers.DisplayManager(self)
         self.clock = pg.time.Clock()
         self.fpslist = []
+        self.log("info", "################ engine initialised ################")
 
     def run(self):
         while True:
@@ -81,6 +85,19 @@ class Engine:
         
     def del_updatedentity(self, entity):
         del self.updatedict[entity.ID]
+
+    def log(self, type, message):
+        def info():
+            logging.info(message)
+        def warning():
+            logging.warning(message)
+        if type.lower() == "warning":
+            warning()
+        if type.lower() == "info":
+            info()
+        else:
+            message = 'message type incorrect. Message: '+message
+            warning()
 
     def __getitem__(self, index):
         return self.config[index]
