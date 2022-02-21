@@ -30,7 +30,11 @@ class Engine:
     a: int = None
     fps: float = 0.0
 
-    def __init__(self, configfilepath):
+    def __init__(self, configfilepath, logging_active=False):
+        self.logging = logging_active
+        if self.logging:
+             logging.basicConfig(filename='engine_v' + __version__ + '.log', format='%(asctime)s%(message)s', encoding='utf-8', level=logging.DEBUG, force=True)
+        self.log("info", "__________ENGINE CREATION__________ \n Engine version: "+__version__)
         pg.init()
         gameentity.GameEntity.engine = self
         self.events = None
@@ -40,13 +44,12 @@ class Engine:
         self.config = self.load_data(configfilepath, get=True)
         for path in self['DataConfig']['_preload']:
             self.load_data(path)
-        if self['settings']['logging']:
-            print("bite")
-            logging.basicConfig(filename='engine_v'+__version__+'.log', format='%(asctime)s %(message)s', encoding='utf-8', level=logging.DEBUG, filemode='x')
+        if self["settings"]["logging"] and self.logging:
+            logging.basicConfig(filename=self["settings"]["logging"], format='%(asctime)s%(message)s', encoding='utf-8', level=logging.DEBUG)
         self.displaymanager = managers.DisplayManager(self)
         self.clock = pg.time.Clock()
         self.fpslist = []
-        self.log("info", "################ engine initialised ################")
+        self.log("info", "engine initialised successfully")
 
     def run(self):
         while True:
@@ -65,6 +68,22 @@ class Engine:
                 print(statistics.mean(self.fpslist))
                 self.quit()
             self.displaymanager.set_caption(self.fps)
+
+    def log(self, type, message):
+        if self.logging:
+            def info():
+                logging.info(message)
+
+            def warning():
+                logging.warning(message)
+
+            if type.lower() == "warning":
+                warning()
+            if type.lower() == "info":
+                info()
+            else:
+                message = 'message type incorrect. Message: ' + message
+                warning()
             
     def get_events(self):
         return self.events
@@ -85,19 +104,6 @@ class Engine:
         
     def del_updatedentity(self, entity):
         del self.updatedict[entity.ID]
-
-    def log(self, type, message):
-        def info():
-            logging.info(message)
-        def warning():
-            logging.warning(message)
-        if type.lower() == "warning":
-            warning()
-        if type.lower() == "info":
-            info()
-        else:
-            message = 'message type incorrect. Message: '+message
-            warning()
 
     def __getitem__(self, index):
         return self.config[index]

@@ -107,7 +107,7 @@ class DataManager:
             data = GameImage(path)
         if data:
             self.data[name] = data
-            self.engine.log("info", "file : "+ name + "loaded successfully")
+            self.engine.log("info", "file : " + name + " loaded successfully")
         
     def save(self, pathname):
         try:

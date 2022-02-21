@@ -2,7 +2,7 @@
 	{
 		"screensize":[1800,1024],
 		"fullscreen":null,
-		"logging": true
+		"logging": "bite.log"
 	},
 	"DataConfig":
 	{
