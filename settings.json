@@ -1,7 +1,7 @@
 {
 	"screensize":[1800,1024],
 	"fullscreen":null,
-	"scenes": null,
+	"scenes": "\\data\\scenes.json",
 	"dataconfig":
 	{
 		"_preload":[

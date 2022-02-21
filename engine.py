@@ -48,7 +48,8 @@ class Engine:
             self.load_data(path)
         self.displaymanager = managers.DisplayManager(self)
         self.clock = pg.time.Clock()
-        self.fpslist = []
+        self.meanfps=0
+        self.count=1
         self.log("info", "engine initialised successfully")
 
     def init_logger(self, logging_active):
@@ -67,7 +68,8 @@ class Engine:
             sh.setFormatter(formatter)
             self.logger.addHandler(sh)
             if DEPENDENCIES['logs']:
-                fh = logging.handlers.RotatingFileHandler(filename="logs\\engine_logs_v" + __version__ + ".log", maxBytes=1048576, backupCount=5, encoding="utf-8")
+                fh = logging.handlers.RotatingFileHandler(filename="logs\\engine_logs_v" + __version__ + ".log",
+                                                          maxBytes=1048576, backupCount=5, encoding="utf-8")
                 fh.setLevel(logging.DEBUG)
                 fh.setFormatter(formatter)
                 self.logger.addHandler(fh)
@@ -89,12 +91,10 @@ class Engine:
             self.displaymanager.update()        
             self.clock.tick()
             self.fps = self.clock.get_fps()
-            if len(self.fpslist)<1000:
-                self.fpslist.append(self.fps)
-            else:
-                print(statistics.mean(self.fpslist))
-                self.quit()
-            self.displaymanager.set_caption(self.fps)
+            if self.meanfps==0:
+                self.meanfps = self.fps
+            self.meanfps= (self.meanfps+self.fps)/2
+            self.displaymanager.set_caption(self.meanfps)
 
     def log(self, logtype, message):
         if self.logging:
@@ -137,6 +137,7 @@ class Engine:
             return False
 
     def quit(self):
+        self.log("info", "fps mean : "+str(self.meanfps))
         self.log("warning", "_____________________________ ENGINE QUIT _____________________________ \n")
         logging.shutdown()
         pg.quit()
