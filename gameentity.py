@@ -58,10 +58,13 @@ class GameEntity:
             self.engine.del_updatedentity(self)
 
     @classmethod
-    def get_subclasses(cls):
+    def set_subclasses(cls):
         """
         Gets all the classes that inherits from GameEntity. This method must be called on
         the engine init.
         """
         cls._subclassdict = get_subclasses(cls)
-        print(cls._subclassdict)
+
+    @classmethod
+    def get_subclasses(cls):
+        return cls._subclassdict

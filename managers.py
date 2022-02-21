@@ -3,17 +3,16 @@ import pygame as pg
 from pathlib import Path
 from gameobjects import Scene
 
-
 class DisplayManager:
     def __init__(self, engine):
         self.engine = engine
         self.scenes = {}
         try:
-            self.engine['settings']['screensize']
+            self.engine['Settings']['screensize']
         except KeyError:
             self.screensize = (900, 900)
         else:
-            self.screensize = self.engine['settings']['screensize']
+            self.screensize = self.engine['Settings']['screensize']
         self.screen = pg.display.set_mode(self.screensize)
         self.caption = "pygame"
 
@@ -102,13 +101,16 @@ class DataManager:
                 try:
                     data = json.load(file)
                 except json.JSONDecodeError:
+                    self.engine.log("error", "file : " + name + " - loaded unsuccessfully - JSON decode error.")
                     data = {}
         if ext == '.png':
             data = GameImage(path)
         if data:
-            self.data[name] = data
-            self.engine.log("info", "file : " + name + " loaded successfully")
-        
+            self.engine.log("info", "file : " + name + " - loaded successfully")
+        else:
+            self.engine.log("warning", "file : " + name + " - no data loaded")
+        self.data[name] = data
+
     def save(self, pathname):
         try:
             self.files[pathname]

@@ -1,13 +1,12 @@
-{	"settings":
+{	"Settings":
 	{
 		"screensize":[1800,1024],
-		"fullscreen":null,
-		"logging": "bite.log"
+		"fullscreen":null
 	},
 	"DataConfig":
 	{
 		"_preload":[
 		]
 	},
-	"Scenes": null
+	"scenes": null
 }
