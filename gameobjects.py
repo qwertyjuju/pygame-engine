@@ -5,9 +5,9 @@ from gameentity import GameEntity
 
 class Scene(GameEntity):
     
-    def init(self, display, name, *args):
+    def init(self, display, ID, *args):
         self.display = display
-        self.name = name
+        self.ID = ID
 
     def get_subsurface(self, area):
         return self.display.screen.subsurface(area)
@@ -54,7 +54,7 @@ class SceneAreaObject(GameEntity):
         self.scenearea.add_Gamesurface(self)
 
     def set_size(self, size):
-        self.size= size
+        self.size=size
 
     def move(self, dx, dy):
         self.pos[0] += dx
