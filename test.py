@@ -16,7 +16,7 @@ def main(sheight, swidth):
         pg.display.flip()
         timer.tick()
         fps = timer.get_fps()
-        if len(fpslist) < 10000:
+        if len(fpslist) < 1000:
             fpslist.append(fps)
         else:
             pg.quit()

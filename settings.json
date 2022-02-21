@@ -1,12 +1,10 @@
-{	"Settings":
-	{
-		"screensize":[1800,1024],
-		"fullscreen":null
-	},
-	"DataConfig":
+{
+	"screensize":[1800,1024],
+	"fullscreen":null,
+	"scenes": null,
+	"dataconfig":
 	{
 		"_preload":[
 		]
-	},
-	"scenes": null
+	}
 }

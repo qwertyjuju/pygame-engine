@@ -5,24 +5,34 @@ from gameentity import GameEntity
 
 class Scene(GameEntity):
     
-    def init(self):
-        pass
+    def init(self, display, name, *args):
+        self.display = display
+        self.name = name
+
+    def get_subsurface(self, area):
+        return self.display.screen.subsurface(area)
 
 
 class SceneArea(GameEntity):
 
-    def init(self, scene, size, pos, clear=True):
+    def init(self, scene, pos, size):
         self.scene = scene
+        self.render_list = []
+        self.set_area(pos, size)
+        self.scene.get_subsurface(self.area)
+
+    def set_area(self, pos, size):
         self.pos = pos
         self.size = size
         self.area = pos, size
-        self.render_list = []
-        
-    def create_gamesurface(self):
-        pass
+
+    def create_gamesurface(self, pos, type="Empty", *args, **kwargs):
+        if type == "Empty":
+            EmptyGameSurface(self, pos, *args, **kwargs)
+        if type == "Image":
+            ImageGameSurface(self, pos, *args, **kwargs)
         
     def add_gamesurface(self, gamesurface):
-        print((gamesurface.surface, gamesurface.pos))
         self.render_list.append([gamesurface.surface, gamesurface.pos])
         
     def update(self):
@@ -40,16 +50,21 @@ class SceneAreaObject(GameEntity):
     def __init__(self, scenearea, pos):
         self.scenearea = scenearea
         self.pos = Vec(pos)
+        super.__init__()
+        self.scenearea.add_Gamesurface(self)
+
+    def set_size(self, size):
+        self.size= size
 
     def move(self, dx, dy):
         self.pos[0] += dx
         self.pos[1] += dy
 
 
-class GameSurface(SceneAreaObject):
+class EmptyGameSurface(SceneAreaObject):
 
-    def init(self, size, pos, flag=None, convertalpha=False):
-        self.size = size
+    def init(self, size, flag=None, convertalpha=False):
+        self.set_size(size)
         self.blit_list = []
         if convertalpha:
             if flag is None:
@@ -61,10 +76,14 @@ class GameSurface(SceneAreaObject):
                 self.surface = pg.Surface(self.size).convert()
             else:
                 self.surface = pg.Surface(self.size, flag).convert()
-        self.scenearea.add_Gamesurface(self)
         
     def blit(self, surf, pos):
         self.surface.blit(surf, pos)
 
     def blits(self, blit_list):
         self.surface.blits(blit_list)
+
+class ImageGameSurface(SceneAreaObject):
+    def init(self, imagename):
+        self.surface = self.engine.get_data(imagename).get_surface()
+        self.set_size(self.surface)

@@ -3,24 +3,28 @@ import pygame as pg
 from pathlib import Path
 from gameobjects import Scene
 
+
 class DisplayManager:
     def __init__(self, engine):
         self.engine = engine
         self.scenes = {}
-        try:
-            self.engine['Settings']['screensize']
-        except KeyError:
-            self.screensize = (900, 900)
+        if 'screensize' in self.engine:
+            self.screensize = self.engine['screensize']
         else:
-            self.screensize = self.engine['Settings']['screensize']
+            self.screensize = (900, 900)
         self.screen = pg.display.set_mode(self.screensize)
         self.caption = "pygame"
+        self.engine.log("info", "Display Manager initialised. \n screensize : " + str(self.screensize)+"\n scenes : "+ str(self.scenes))
+
+    def init_scenes(self):
+        if 'scenes' in self.engine:
+            if self.engine['scenes']:
+                self.scenesdata= self.engine.get_data(self.engine['scenes'])
+                for scenedata in self.scenesdata:
+                    self.create_scene()
 
     def set_caption(self, caption):
         self.caption = str(caption)
-
-    def create_subsurface(self, area):
-        return self.screen.subsurface(area)
         
     def update(self):
         pg.display.set_caption(self.caption)
@@ -53,7 +57,7 @@ class DataManager:
         self.data = {}
         self.mainPath = Path.cwd()
         self.set_path(self.mainPath)
-        self.engine.log("info", "Datamanager initialised")
+        self.engine.log("info", "Data Manager initialised. Files : " + str(self.files))
         
     def set_path(self, search_path):
         for path in search_path.iterdir():
@@ -173,12 +177,15 @@ class GameImage:
         self.load()
     
     def load(self):
-        self.image = pg.image.load(self.loc).convert_alpha()
+        self.surface = pg.image.load(self.loc).convert_alpha()
         
     def get_tile(self, x, y, size):
         newsurf = pg.Surface(size, pg.SRCALPHA).convert_alpha()
         newsurf.blit(self.image, (-x, -y))
         return newsurf
+
+    def get_surface(self):
+        return self.surface
 
 
 class DataManagerException(Exception):

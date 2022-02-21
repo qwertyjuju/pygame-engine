@@ -25,13 +25,12 @@ class GameEntity:
 
     def __new__(cls, *args, **kwargs):
         if GameEntity.engine is None:
-            print('Engine not initialized, Object not created')
             return
         else:
             return super().__new__(cls)
 
     def __init__(self, *args, **kwargs):
-        self.ID = GameEntity._nbentity
+        self.entityID = GameEntity._nbentity
         GameEntity._nbentity += 1
         self._update = False
         if "update" in dir(self):

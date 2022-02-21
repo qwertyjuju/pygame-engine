@@ -1,18 +1,9 @@
 {"scenes":[
-		{
-		"ID":0,
-		"objects":[
-				{
-				"ID":1,
-				"objectname":"TiledMap",
-				"paramlist":[
-						"map.json",
-						0,
-						[1500,1000],
-						[0,0]
-					]
-				}
-			]
-		}
-	]
+	{
+		"ID": "Scene1",
+		"SceneAreas":[
+
+		]
+	}
+]
 }
