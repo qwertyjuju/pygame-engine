@@ -8,11 +8,11 @@ class DisplayManager:
         self.engine = engine
         self.scenes = {}
         try:
-            self.engine['settings']['screensize']
+            self.engine['Settings']['screensize']
         except KeyError:
             self.screensize = (900, 900)
         else:
-            self.screensize = self.engine['settings']['screensize']
+            self.screensize = self.engine['Settings']['screensize']
         self.screen = pg.display.set_mode(self.screensize)
         self.caption = "pygame"
 
@@ -111,7 +111,6 @@ class DataManager:
             self.engine.log("warning", "file : " + name + " - no data loaded")
         self.data[name] = data
 
-        
     def save(self, pathname):
         try:
             self.files[pathname]

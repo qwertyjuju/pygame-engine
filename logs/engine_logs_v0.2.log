@@ -1,0 +1,44 @@
+2022-02-21 17:47:40,181 - Engine V0.2 - WARNING - __________ENGINE CREATION__________ 
+ Engine version: 0.2
+2022-02-21 17:47:40,181 - Engine V0.2 - WARNING - dependency : srcs - not found
+2022-02-21 17:47:40,243 - Engine V0.2 - INFO - Gamentities : {'Scene': <class 'gameobjects.Scene'>, 'SceneArea': <class 'gameobjects.SceneArea'>, 'SceneAreaObject': <class 'gameobjects.SceneAreaObject'>, 'GameSurface': <class 'gameobjects.GameSurface'>}
+2022-02-21 17:47:40,285 - Engine V0.2 - INFO - Datamanager initialised
+2022-02-21 17:47:40,286 - Engine V0.2 - WARNING - file : settings.json - loaded successfully
+2022-02-21 17:47:40,356 - Engine V0.2 - INFO - engine initialised successfully
+2022-02-21 17:48:45,719 - Engine V0.2 - WARNING - __________ENGINE CREATION__________ 
+ Engine version: 0.2
+2022-02-21 17:48:45,719 - Engine V0.2 - WARNING - dependency : srcs - not found
+2022-02-21 17:48:45,781 - Engine V0.2 - INFO - Gamentities : {'Scene': <class 'gameobjects.Scene'>, 'SceneArea': <class 'gameobjects.SceneArea'>, 'SceneAreaObject': <class 'gameobjects.SceneAreaObject'>, 'GameSurface': <class 'gameobjects.GameSurface'>}
+2022-02-21 17:48:45,843 - Engine V0.2 - INFO - Datamanager initialised
+2022-02-21 17:48:45,843 - Engine V0.2 - INFO - file : settings.json - loaded successfully
+2022-02-21 17:48:45,913 - Engine V0.2 - INFO - engine initialised successfully
+2022-02-21 17:49:22,187 - Engine V0.2 - WARNING - __________ENGINE CREATION__________ 
+ Engine version: 0.2
+2022-02-21 17:49:22,187 - Engine V0.2 - WARNING - dependency : srcs - not found
+2022-02-21 17:49:22,246 - Engine V0.2 - INFO - Gamentities : {'Scene': <class 'gameobjects.Scene'>, 'SceneArea': <class 'gameobjects.SceneArea'>, 'SceneAreaObject': <class 'gameobjects.SceneAreaObject'>, 'GameSurface': <class 'gameobjects.GameSurface'>}
+2022-02-21 17:49:22,283 - Engine V0.2 - INFO - Datamanager initialised
+2022-02-21 17:49:22,284 - Engine V0.2 - INFO - file : settings.json - loaded successfully
+2022-02-21 17:49:22,361 - Engine V0.2 - INFO - engine initialised successfully
+2022-02-21 17:51:00,845 - Engine V0.2 - WARNING - __________ENGINE CREATION__________ 
+ Engine version: 0.2
+2022-02-21 17:51:00,849 - Engine V0.2 - WARNING - dependency : srcs - not found
+2022-02-21 17:51:00,951 - Engine V0.2 - INFO - Gamentities : {'Scene': <class 'gameobjects.Scene'>, 'SceneArea': <class 'gameobjects.SceneArea'>, 'SceneAreaObject': <class 'gameobjects.SceneAreaObject'>, 'GameSurface': <class 'gameobjects.GameSurface'>}
+2022-02-21 17:51:01,032 - Engine V0.2 - INFO - Datamanager initialised
+2022-02-21 17:51:01,033 - Engine V0.2 - INFO - file : settings.json - loaded successfully
+2022-02-21 17:51:01,033 - Engine V0.2 - INFO - Engine config : {'Settings': {'screensize': [1800, 1024], 'fullscreen': None}, 'DataConfig': {'_preload': []}, 'scenes': None}
+2022-02-21 17:51:01,123 - Engine V0.2 - INFO - engine initialised successfully
+2022-02-21 17:51:33,871 - Engine V0.2 - WARNING - __________ENGINE CREATION__________ 
+ Engine version: 0.2
+2022-02-21 17:51:33,871 - Engine V0.2 - WARNING - dependency : srcs - not found
+2022-02-21 17:51:33,932 - Engine V0.2 - INFO - Gamentities : {'Scene': <class 'gameobjects.Scene'>, 'SceneArea': <class 'gameobjects.SceneArea'>, 'SceneAreaObject': <class 'gameobjects.SceneAreaObject'>, 'GameSurface': <class 'gameobjects.GameSurface'>}
+2022-02-21 17:51:33,991 - Engine V0.2 - INFO - Datamanager initialised
+2022-02-21 17:51:33,992 - Engine V0.2 - INFO - file : settings.json - loaded successfully
+2022-02-21 17:51:33,993 - Engine V0.2 - INFO - Engine config : {'Settings': {'screensize': [1800, 1024], 'fullscreen': None}, 'DataConfig': {'_preload': []}, 'scenes': None}
+2022-02-21 17:51:34,072 - Engine V0.2 - INFO - engine initialised successfully
+2022-02-21 17:52:08,611 - Engine V0.2 - WARNING - __________ENGINE CREATION__________ 
+ Engine version: 0.2
+2022-02-21 17:52:08,665 - Engine V0.2 - INFO - Gamentities : {'Scene': <class 'gameobjects.Scene'>, 'SceneArea': <class 'gameobjects.SceneArea'>, 'SceneAreaObject': <class 'gameobjects.SceneAreaObject'>, 'GameSurface': <class 'gameobjects.GameSurface'>}
+2022-02-21 17:52:08,701 - Engine V0.2 - INFO - Datamanager initialised
+2022-02-21 17:52:08,702 - Engine V0.2 - INFO - file : settings.json - loaded successfully
+2022-02-21 17:52:08,703 - Engine V0.2 - INFO - Engine config : {'Settings': {'screensize': [1800, 1024], 'fullscreen': None}, 'DataConfig': {'_preload': []}, 'scenes': None}
+2022-02-21 17:52:08,779 - Engine V0.2 - INFO - engine initialised successfully

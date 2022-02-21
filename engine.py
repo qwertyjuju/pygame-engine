@@ -1,5 +1,3 @@
-# import os
-# import inspect
 import sys, logging, weakref, statistics, importlib
 import logging.handlers
 from pathlib import Path
@@ -8,7 +6,7 @@ import managers
 import gameentity
 
 DEPENDENCIES={
-    'srcs':"import",
+    'src':"import",
     'logs':0,
     'data':0
 }
@@ -28,7 +26,6 @@ for key in DEPENDENCIES.keys():
         DEPENDENCIES[key]=0
 
 __version__ = "0.2"
-
 
 class Engine:
     a: int = None
@@ -53,6 +50,7 @@ class Engine:
         self.updatelist = self.updatedict.values()
         self.datamanager = managers.DataManager(self)
         self.config = self.load_data(configfilepath, get=True)
+        self.log("info", "Engine config : " + str(self.config))
         for path in self['DataConfig']['_preload']:
             self.load_data(path)
         self.displaymanager = managers.DisplayManager(self)
@@ -65,13 +63,14 @@ class Engine:
         self.logger.setLevel(logging.DEBUG)
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         sh = logging.StreamHandler()
-        sh.setLevel(logging.WARNING)
+        sh.setLevel(logging.DEBUG)
         sh.setFormatter(formatter)
-        fh = logging.handlers.RotatingFileHandler(filename="logs\engine_logs_v" + __version__ + ".log", maxBytes=1048576, backupCount=5, encoding="utf-8")
-        fh.setLevel(logging.DEBUG)
-        fh.setFormatter(formatter)
         self.logger.addHandler(sh)
-        self.logger.addHandler(fh)
+        if DEPENDENCIES['logs']:
+            fh = logging.handlers.RotatingFileHandler(filename="logs\engine_logs_v" + __version__ + ".log", maxBytes=1048576, backupCount=5, encoding="utf-8")
+            fh.setLevel(logging.DEBUG)
+            fh.setFormatter(formatter)
+            self.logger.addHandler(fh)
 
     def run(self):
         while True:
@@ -125,6 +124,7 @@ class Engine:
 
     @staticmethod
     def quit():
+        logging.shutdown()
         pg.quit()
         sys.exit()
 
