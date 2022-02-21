@@ -1,19 +1,3 @@
-import sys
-from pathlib import Path
-
-current_dir = Path.cwd()
-src_dir = Path.joinpath(current_dir, 'src')
-data_dir = Path.joinpath(current_dir, 'data')
-if src_dir.exists():
-    sys.path.insert(0, str(src_dir))
-    try:
-        import src
-    except ImportError:
-        print('src package not imported')
-else:
-    print('no src package found')
-
-
 def get_subclass(cls):
     return cls.__subclasses__()
 
@@ -50,7 +34,7 @@ class GameEntity:
         self.ID = GameEntity._nbentity
         GameEntity._nbentity += 1
         self._update = False
-        if 'update' in dir(self):
+        if "update" in dir(self):
             self.set_update(True)
         self.init(*args, **kwargs)
 
@@ -80,6 +64,3 @@ class GameEntity:
         the engine init.
         """
         cls._subclassdict = get_subclasses(cls)
-
-
-GameEntity.get_subclasses()

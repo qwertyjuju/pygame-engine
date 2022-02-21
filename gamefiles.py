@@ -2,6 +2,7 @@ import json, pickle, pathlib
 import pygame as pg
 from pygame.locals import *
 
+
 class GameFile:
         
     def __init__(self, manager, path, customname = None):
@@ -11,7 +12,7 @@ class GameFile:
         self.type = self.path.suffix
         self.manager = manager
         if customname is None:
-            self.name= self.path.name
+            self.name = self.path.name
         else:
             self.name = customname
         self.manager.addfile(self)
@@ -23,12 +24,11 @@ class GameFile:
                 data.update(json.load(file) )
         if self.type == '.png':
             data.update({
-                'img':GameImage(self.path)
+                'img': GameImage(self.path)
             })
         data['_dir'] = str(self.dir)
         self.manager.add_data(self, data)
 
 
-    
 class Spritesheet:
     pass

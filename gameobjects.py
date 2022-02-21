@@ -5,8 +5,8 @@ from gameentity import GameEntity
 
 class Scene(GameEntity):
     
-    def init(self, scenemanager):
-        self.manager = scenemanager
+    def init(self):
+        pass
 
 
 class SceneArea(GameEntity):
@@ -37,7 +37,7 @@ class SceneArea(GameEntity):
         
 class SceneAreaObject(GameEntity):
 
-    def init(self, scenearea, pos):
+    def __init__(self, scenearea, pos):
         self.scenearea = scenearea
         self.pos = Vec(pos)
 

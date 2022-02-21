@@ -6,7 +6,6 @@
 "DataConfig":
 	{
 		"_preload":[
-			".\\data\\map\\map.json"
 		]
 	},
 "Scenes": null

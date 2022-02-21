@@ -1,12 +1,28 @@
+# import os
+# import inspect
 import sys
 import weakref
+from pathlib import Path
 import pygame as pg
 import managers
 import gameentity
-# import statistics
-# import os
-# import inspect
-__version__ = '0.0.3'
+import statistics
+current_dir = Path.cwd()
+src_dir = Path.joinpath(current_dir, 'src')
+data_dir = Path.joinpath(current_dir, 'data')
+if src_dir.exists():
+    sys.path.insert(0, str(src_dir))
+    import src
+    """
+    try:
+        import src
+    except ImportError:
+        print('src package not imported')
+    """
+else:
+    print('no src package found')
+
+__version__ = '0.2'
 
 
 class Engine:
@@ -21,6 +37,7 @@ class Engine:
         self.updatelist = self.updatedict.values()
         self.datamanager = managers.DataManager()
         self.config = self.load_data(configfilepath, get=True)
+        print(self.config)
         for path in self.config['DataConfig']['_preload']:
             self.load_data(path)
         self.displaymanager = managers.DisplayManager(self)
@@ -38,13 +55,11 @@ class Engine:
             self.displaymanager.update()        
             self.clock.tick()
             self.fps = self.clock.get_fps()
-            """
             if len(self.fpslist)<10000:
                 self.fpslist.append(self.fps)
             else:
                 print(statistics.mean(self.fpslist))
                 self.quit()
-            """
             self.displaymanager.set_caption(self.fps)
             
     def get_events(self):
@@ -54,7 +69,7 @@ class Engine:
         return self.datamanager[dataname]
         
     def load_data(self, dataname, get=False):
-        data = self.datamanager.load(dataname)
+        data = self.datamanager.load(dataname, get)
         if get:
             return data
         
@@ -74,3 +89,7 @@ class Engine:
     def quit():
         pg.quit()
         sys.exit()
+
+
+gameentity.GameEntity.get_subclasses()
+

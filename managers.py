@@ -89,6 +89,7 @@ class DataManager:
         else:
             self._load(path_name)
         if get:
+            print(self.data[path_name])
             return self.data[path_name]
             
     def _load(self, name):

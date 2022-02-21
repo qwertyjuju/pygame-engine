@@ -2,10 +2,9 @@ import numpy as np
 import pygame as pg
 from pygame.locals import *
 from pygame.math import Vector2 as Vec
-from gameentity import GameEntity
 from gameobjects import *
 import math
-
+"""
 
 class TiledMap(SceneObject):
     def init(self, filename, sceneareaid, sceneareasize, sceneareapos):
@@ -178,8 +177,7 @@ class ChunkBuffer(TiledObject):
         for rownb,row in enumerate(self.surfaces):
             for cellnb,cell in enumerate(row):
                 self.surfaces[rownb,cellnb].move(dx,dy)
-            
-            
+"""
                     
 """                  
 class TiledSurfaceBuffer(TiledObject):
