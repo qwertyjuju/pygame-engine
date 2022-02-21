@@ -78,7 +78,7 @@ class Engine:
             if not value:
                 self.log("warning", "dependency : " + key + " - not found")
             if value == "ImportError":
-                self.log("warning", "dependency : " + key + " - Import error. Module not imported")
+                self.log("error", "dependency : " + key + " - Import error. Module not imported")
 
     def run(self):
         while True:
