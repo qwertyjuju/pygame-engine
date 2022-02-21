@@ -3,7 +3,6 @@ import pygame as pg
 from pathlib import Path
 from gameobjects import Scene
 
-
 class DisplayManager:
     def __init__(self, engine):
         self.engine = engine
@@ -102,12 +101,16 @@ class DataManager:
                 try:
                     data = json.load(file)
                 except json.JSONDecodeError:
+                    self.engine.log("error", "file : " + name + " - loaded unsuccessfully - JSON decode error.")
                     data = {}
         if ext == '.png':
             data = GameImage(path)
         if data:
-            self.data[name] = data
-            self.engine.log("info", "file : " + name + " loaded successfully")
+            self.engine.log("info", "file : " + name + " - loaded successfully")
+        else:
+            self.engine.log("warning", "file : " + name + " - no data loaded")
+        self.data[name] = data
+
         
     def save(self, pathname):
         try:
