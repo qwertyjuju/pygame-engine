@@ -1,14 +1,17 @@
-import sys, logging, weakref, statistics, importlib
+import sys
+import logging
+import weakref
+import importlib
 import logging.handlers
 from pathlib import Path
 import pygame as pg
 import managers
 import gameentity
-DEPENDENCIES={
-    "test": "import",
-    "src":"import",
-    "logs":0,
-    "data":0
+from version import *
+DEPENDENCIES = {
+    "src": "import",
+    "logs": 0,
+    "data": 0
 }
 current_dir = Path.cwd()
 for key in DEPENDENCIES.keys():
@@ -17,18 +20,18 @@ for key in DEPENDENCIES.keys():
         try:
             importlib.import_module(key)
         except ModuleNotFoundError as e:
-            DEPENDENCIES[key] = "ModuleNotFoundError-"+str(e)
+            DEPENDENCIES[key] = "ModuleNotFoundError - " + str(e)
         except ImportError as e:
-            DEPENDENCIES[key]= "ImportError-"+ str(e)
+            DEPENDENCIES[key] = "ImportError - " + str(e)
         else:
             sys.path.insert(0, str(DEPENDENCIES[key]))
     else:
         if dependency_dir.exists():
             DEPENDENCIES[key] = dependency_dir
         else:
-            DEPENDENCIES[key]=0
+            DEPENDENCIES[key] = 0
 
-__version__ = "0.2"
+__version__ = str(VER)
 
 
 class Engine:
@@ -51,8 +54,8 @@ class Engine:
             self.load_data(path)
         self.displaymanager = managers.DisplayManager(self)
         self.clock = pg.time.Clock()
-        self.meanfps=0
-        self.count=1
+        self.meanfps = 0
+        self.count = 1
         self.log("info", "engine initialised successfully")
 
     def init_logger(self, logging_active):
@@ -77,13 +80,12 @@ class Engine:
                 fh.setFormatter(formatter)
                 self.logger.addHandler(fh)
         self.log("warning", "_____________________________ENGINE CREATION_____________________________ \n Engine version:", __version__)
-        for key, value in DEPENDENCIES.items():
-            print(key, value)
+        for dependency, value in DEPENDENCIES.items():
             if not value:
-                self.log("warning", "dependency :", key, "- not found")
+                self.log("warning", "dependency :", dependency, "- not found")
             if isinstance(value, str):
-                if value.split("-")[0] in ["ImportError","ModuleNotFoundError"]:
-                    self.log("error", "dependency :", key, "-", value)
+                if value.split(" - ")[0] in ["ImportError", "ModuleNotFoundError"]:
+                    self.log("error", "dependency :", dependency, "-", value)
 
     def run(self):
         while True:
@@ -96,14 +98,14 @@ class Engine:
             self.displaymanager.update()        
             self.clock.tick()
             self.fps = self.clock.get_fps()
-            if self.meanfps==0:
+            if self.meanfps == 0:
                 self.meanfps = self.fps
-            self.meanfps= (self.meanfps+self.fps)/2
+            self.meanfps = (self.meanfps+self.fps)/2
             self.displaymanager.set_caption(self.meanfps)
 
     def log(self, logtype, *texts):
         if self.logging:
-            text=" ".join(texts)
+            text = " ".join(texts)
             if logtype.lower() == "info":
                 self.logger.info(text)
             elif logtype.lower() == "warning":
@@ -124,8 +126,8 @@ class Engine:
         if get:
             return data
         
-    def create_scene(self, ID, sceneareas=None):
-        return self.displaymanager.create_scene(ID, sceneareas)
+    def create_scene(self, sceneid, sceneareas=None):
+        return self.displaymanager.create_scene(sceneid, sceneareas)
 
     def get_scene(self, sceneid):
         return self.displaymanager[sceneid]
@@ -151,5 +153,3 @@ class Engine:
         logging.shutdown()
         pg.quit()
         sys.exit()
-
-

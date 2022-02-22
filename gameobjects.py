@@ -5,10 +5,10 @@ from gameentity import GameEntity
 
 class Scene(GameEntity):
     
-    def init(self, display, ID, sceneareas=None):
+    def init(self, display, sceneid, sceneareas=None):
         self.display = display
-        self.ID = ID
-        self.sceneareas={}
+        self.id = sceneid
+        self.sceneareas = {}
         if sceneareas:
             for scenearea in sceneareas:
                 self.create_scenearea(**scenearea)
@@ -31,6 +31,7 @@ class SceneArea(GameEntity):
         self.scene = scene
         self.render_list = []
         self.set_area(pos, size)
+        self.gamesurfaces = {}
         self.surface = self.scene.get_subsurface(self.area)
 
     def set_area(self, pos, size):
@@ -59,10 +60,10 @@ class SceneArea(GameEntity):
         
 class SceneAreaObject(GameEntity):
 
-    def __init__(self, scenearea, pos):
+    def __init__(self, scenearea, pos, *args, **kwargs):
         self.scenearea = scenearea
         self.pos = Vec(pos)
-        super.__init__()
+        super().__init__()
         self.scenearea.add_Gamesurface(self)
 
     def set_size(self, size):
@@ -95,7 +96,8 @@ class EmptyGameSurface(SceneAreaObject):
     def blits(self, blit_list):
         self.surface.blits(blit_list)
 
+
 class ImageGameSurface(SceneAreaObject):
     def init(self, imagename):
         self.surface = self.engine.get_data(imagename).get_surface()
-        self.set_size(self.surface)
+        self.set_size(self.surface.get_size())

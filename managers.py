@@ -36,9 +36,9 @@ class DisplayManager:
         if sceneid not in self.scenes:
             return Scene(self, sceneid, sceneareas)
         else:
-            self.engine.log("warning", "Scene not created, sceneID already exists. SceneID:", sceneid)
+            self.engine.log("error", "Scene not created, sceneID already exists. SceneID:", sceneid)
 
-    def _add_scene(self, scene):
+    def add_scene(self, scene):
         self.scenes[scene.id] = scene
 
     def _del_scene(self):
