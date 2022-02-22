@@ -1,4 +1,4 @@
-from engine import GameEntity
+from gameentity import GameEntity
 
 def init():
     pass

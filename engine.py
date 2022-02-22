@@ -52,12 +52,11 @@ def init_logger():
     sh.setLevel(logging.WARNING)
     sh.setFormatter(formatter)
     logger.addHandler(sh)
-    if DEPENDENCIES['logs']:
-        fh = logging.handlers.RotatingFileHandler(filename="logs\\engine_logs_v" + __version__ + ".log",
-                                                  maxBytes=1048576, backupCount=5, encoding="utf-8")
-        fh.setLevel(logging.DEBUG)
-        fh.setFormatter(formatter)
-        logger.addHandler(fh)
+    fh = logging.handlers.RotatingFileHandler(filename="logs\\engine_logs_v" + __version__ + ".log",
+                                              maxBytes=1048576, backupCount=5, encoding="utf-8")
+    fh.setLevel(logging.DEBUG)
+    fh.setFormatter(formatter)
+    logger.addHandler(fh)
     return logger
 
 
