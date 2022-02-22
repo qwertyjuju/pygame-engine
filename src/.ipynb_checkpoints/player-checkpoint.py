@@ -1,4 +1,4 @@
-from gameobjects import SceneObject
+from engine.gameobjects import SceneObject
 class Player(SceneObject):
     def init(self, filename, sceneareaid):
         self.data= self.get_data(filename)

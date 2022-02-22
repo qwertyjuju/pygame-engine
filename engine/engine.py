@@ -5,9 +5,10 @@ import importlib
 import logging.handlers
 from pathlib import Path
 import pygame as pg
-import managers
-import gameentity
-from version import *
+import engine.managers as managers
+import engine.gameentity as gameentity
+from engine.version import *
+
 DEPENDENCIES = {
     "src": "import",
     "logs": 0,
@@ -17,7 +18,7 @@ DEPENDENCIES = {
 __version__ = str(VER)
 
 
-def init():
+def init_dependencies():
     current_dir = Path.cwd()
     for key in DEPENDENCIES.keys():
         dependency_dir = Path.joinpath(current_dir, key)
@@ -32,6 +33,7 @@ def init():
                 log("error", "dependency :", key, "-", DEPENDENCIES[key])
             else:
                 sys.path.insert(0, str(DEPENDENCIES[key]))
+                log("info", "dependency :", key, "-", "imported successfully")
         else:
             if dependency_dir.exists():
                 DEPENDENCIES[key] = dependency_dir
@@ -76,7 +78,6 @@ class Engine:
     def __init__(self, configfilepath, enable_logging=0):
         # On initialisation of the engine, several objects are created,
         self.logging = enable_logging
-        init()
         self.log("warning",
                  "_____________________________ENGINE CREATION_____________________________ \n Engine version:",
                  __version__)
@@ -95,7 +96,7 @@ class Engine:
         self.displaymanager = managers.DisplayManager(self)
         self.clock = pg.time.Clock()
         self.meanfps = 0
-        self.count = 1
+        init_dependencies()
         self.log("info", "engine initialised successfully")
 
     def run(self):
@@ -112,7 +113,7 @@ class Engine:
             if self.meanfps == 0:
                 self.meanfps = self.fps
             self.meanfps = (self.meanfps+self.fps)/2
-            self.displaymanager.set_caption(self.meanfps)
+            self.displaymanager.set_caption(self.fps)
 
     def log(self, logtype, *texts):
         if self.logging:
