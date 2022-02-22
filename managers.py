@@ -9,19 +9,20 @@ class DisplayManager:
         self.engine = engine
         self.scenes = {}
         if 'screensize' in self.engine:
-            self.screensize = self.engine['screensize']
-        else:
-            self.screensize = (900, 900)
+            if self.engine['screensize'] is not None:
+                self.screensize = self.engine['screensize']
+            else:
+                self.screensize = (900, 900)
         self.screen = pg.display.set_mode(self.screensize)
         self.caption = "pygame"
-        self.engine.log("info", "Display Manager initialised. \n screensize : " + str(self.screensize)+"\n scenes : "+ str(self.scenes))
+        self.engine.log("info", "Display Manager initialised. \n screensize :", str(self.screensize), "\n scenes :", str(self.scenes))
 
     def init_scenes(self):
         if 'scenes' in self.engine:
             if self.engine['scenes']:
                 self.scenesdata= self.engine.get_data(self.engine['scenes'])
                 for scenedata in self.scenesdata:
-                    self.create_scene()
+                    self.create_scene(scenedata)
 
     def set_caption(self, caption):
         self.caption = str(caption)
@@ -31,9 +32,11 @@ class DisplayManager:
         pg.display.flip()
         self.screen.fill((0, 0, 0))
 
-    def create_scene(self, sceneid):
+    def create_scene(self, sceneid, sceneareas=None):
         if sceneid not in self.scenes:
-            return Scene(sceneid)
+            return Scene(self, sceneid, sceneareas)
+        else:
+            self.engine.log("warning", "Scene not created, sceneID already exists. SceneID:", sceneid)
 
     def _add_scene(self, scene):
         self.scenes[scene.id] = scene

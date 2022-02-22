@@ -5,13 +5,25 @@ from gameentity import GameEntity
 
 class Scene(GameEntity):
     
-    def init(self, display, ID, *args):
+    def init(self, display, ID, sceneareas=None):
         self.display = display
         self.ID = ID
+        self.sceneareas={}
+        if sceneareas:
+            for scenearea in sceneareas:
+                self.create_scenearea(**scenearea)
+
+    def create_scenearea(self, ID, pos, size):
+        if ID not in self.sceneareas:
+            return
+        else:
+            self.engine.log("warning", "")
 
     def get_subsurface(self, area):
         return self.display.screen.subsurface(area)
 
+    def __getitem__(self, item):
+        return self.sceneareas[item]
 
 class SceneArea(GameEntity):
 
@@ -19,7 +31,7 @@ class SceneArea(GameEntity):
         self.scene = scene
         self.render_list = []
         self.set_area(pos, size)
-        self.scene.get_subsurface(self.area)
+        self.surface = self.scene.get_subsurface(self.area)
 
     def set_area(self, pos, size):
         self.pos = pos

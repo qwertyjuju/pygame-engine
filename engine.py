@@ -4,26 +4,29 @@ from pathlib import Path
 import pygame as pg
 import managers
 import gameentity
-
 DEPENDENCIES={
-    'src':"import",
-    'logs':0,
-    'data':0
+    "test": "import",
+    "src":"import",
+    "logs":0,
+    "data":0
 }
 current_dir = Path.cwd()
 for key in DEPENDENCIES.keys():
     dependency_dir = Path.joinpath(current_dir, key)
-    if dependency_dir.exists():
-        DEPENDENCIES[key] = dependency_dir
-        if DEPENDENCIES[key] == "import":
-            try:
-                importlib.import_module(key)
-            except ImportError:
-                DEPENDENCIES[key] = "ImportError"
-            else:
-                sys.path.insert(0, str(DEPENDENCIES[key]))
+    if DEPENDENCIES[key] == "import":
+        try:
+            importlib.import_module(key)
+        except ModuleNotFoundError as e:
+            DEPENDENCIES[key] = "ModuleNotFoundError-"+str(e)
+        except ImportError as e:
+            DEPENDENCIES[key]= "ImportError-"+ str(e)
+        else:
+            sys.path.insert(0, str(DEPENDENCIES[key]))
     else:
-        DEPENDENCIES[key]=0
+        if dependency_dir.exists():
+            DEPENDENCIES[key] = dependency_dir
+        else:
+            DEPENDENCIES[key]=0
 
 __version__ = "0.2"
 
@@ -37,13 +40,13 @@ class Engine:
         pg.init()
         gameentity.GameEntity.engine = self
         gameentity.GameEntity.set_subclasses()
-        self.log("info", "Gamentities : " +str(gameentity.GameEntity.get_subclasses()))
+        self.log("info", "Gamentities :", str(gameentity.GameEntity.get_subclasses()))
         self.events = None
         self.updatedict = {}
         self.updatelist = self.updatedict.values()
         self.datamanager = managers.DataManager(self)
         self.config = self.get_data(configfilepath)
-        self.log("info", "Engine config : " + str(self.config))
+        self.log("info", "Engine config :", str(self.config))
         for path in self['dataconfig']['_preload']:
             self.load_data(path)
         self.displaymanager = managers.DisplayManager(self)
@@ -73,12 +76,14 @@ class Engine:
                 fh.setLevel(logging.DEBUG)
                 fh.setFormatter(formatter)
                 self.logger.addHandler(fh)
-        self.log("warning", "_____________________________ENGINE CREATION_____________________________ \n Engine version: "+__version__)
+        self.log("warning", "_____________________________ENGINE CREATION_____________________________ \n Engine version:", __version__)
         for key, value in DEPENDENCIES.items():
+            print(key, value)
             if not value:
-                self.log("warning", "dependency : " + key + " - not found")
-            if value == "ImportError":
-                self.log("error", "dependency : " + key + " - Import error. Module not imported")
+                self.log("warning", "dependency :", key, "- not found")
+            if isinstance(value, str):
+                if value.split("-")[0] in ["ImportError","ModuleNotFoundError"]:
+                    self.log("error", "dependency :", key, "-", value)
 
     def run(self):
         while True:
@@ -96,16 +101,17 @@ class Engine:
             self.meanfps= (self.meanfps+self.fps)/2
             self.displaymanager.set_caption(self.meanfps)
 
-    def log(self, logtype, message):
+    def log(self, logtype, *texts):
         if self.logging:
+            text=" ".join(texts)
             if logtype.lower() == "info":
-                self.logger.info(message)
+                self.logger.info(text)
             elif logtype.lower() == "warning":
-                self.logger.warning(message)
+                self.logger.warning(text)
             elif logtype.lower() == "error":
-                self.logger.error(message)
+                self.logger.error(text)
             else:
-                self.logger.warning("message type incorrect. Message: " + message)
+                self.logger.warning("message type incorrect. Message: " + text)
             
     def get_events(self):
         return self.events
@@ -118,8 +124,11 @@ class Engine:
         if get:
             return data
         
-    def create_scene(self):
-        pass
+    def create_scene(self, ID, sceneareas=None):
+        return self.displaymanager.create_scene(ID, sceneareas)
+
+    def get_scene(self, sceneid):
+        return self.displaymanager[sceneid]
         
     def add_updatedentity(self, entity):
         self.updatedict[entity.entityID] = weakref.ref(entity)
