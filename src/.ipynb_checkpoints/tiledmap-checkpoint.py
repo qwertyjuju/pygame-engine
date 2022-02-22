@@ -1,9 +1,6 @@
 import numpy as np
-import pygame as pg
 from pygame.locals import *
-from pygame.math import Vector2 as Vec
-from gameentity import GameEntity
-from gameobjects import *
+from engine.gameobjects import *
 import math
 
 

@@ -1,8 +1,8 @@
-from gameentity import GameEntity
+from engine.gameentity import GameEntity
 
 def init():
-    pass
+    Map("data/")
 
 class Map(GameEntity):
-    def __init__(self, dataname):
+    def init(self, dataname):
         pass

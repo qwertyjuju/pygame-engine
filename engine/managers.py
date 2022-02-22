@@ -1,7 +1,7 @@
 import json
 import pygame as pg
 from pathlib import Path
-from gameobjects import Scene
+from engine.gameobjects import Scene
 
 
 class DisplayManager:

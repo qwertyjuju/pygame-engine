@@ -33,3 +33,5 @@ for fps in fpslist:
 moyfps = sumfps / len(fpslist)
 print(moyfps)
 """
+from pathlib import Path
+
