@@ -2,6 +2,9 @@
 	"screensize":[1800,1024],
 	"fullscreen":null,
 	"scenes": null,
+	"dependencies": {
+		"src": "import"
+	},
 	"dataconfig":
 	{
 		"_preload":[

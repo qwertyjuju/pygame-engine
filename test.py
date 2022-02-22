@@ -1,3 +1,4 @@
+"""
 import pygame as pg
 import sys
 
@@ -31,3 +32,4 @@ for fps in fpslist:
     sumfps += fps
 moyfps = sumfps / len(fpslist)
 print(moyfps)
+"""
