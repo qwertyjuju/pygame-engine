@@ -1,2 +1,1 @@
-from tiledmap import *
-from player import *
+from .main import *

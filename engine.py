@@ -13,33 +13,74 @@ DEPENDENCIES = {
     "logs": 0,
     "data": 0
 }
-current_dir = Path.cwd()
-for key in DEPENDENCIES.keys():
-    dependency_dir = Path.joinpath(current_dir, key)
-    if DEPENDENCIES[key] == "import":
-        try:
-            importlib.import_module(key)
-        except ModuleNotFoundError as e:
-            DEPENDENCIES[key] = "ModuleNotFoundError - " + str(e)
-        except ImportError as e:
-            DEPENDENCIES[key] = "ImportError - " + str(e)
-        else:
-            sys.path.insert(0, str(DEPENDENCIES[key]))
-    else:
-        if dependency_dir.exists():
-            DEPENDENCIES[key] = dependency_dir
-        else:
-            DEPENDENCIES[key] = 0
 
 __version__ = str(VER)
 
 
+def init():
+    current_dir = Path.cwd()
+    for key in DEPENDENCIES.keys():
+        dependency_dir = Path.joinpath(current_dir, key)
+        if DEPENDENCIES[key] == "import":
+            try:
+                importlib.import_module(key)
+            except ModuleNotFoundError as e:
+                DEPENDENCIES[key] = "ModuleNotFoundError - " + str(e)
+                log("error", "dependency :", key, "-", DEPENDENCIES[key])
+            except ImportError as e:
+                DEPENDENCIES[key] = "ImportError - " + str(e)
+                log("error", "dependency :", key, "-", DEPENDENCIES[key])
+            else:
+                sys.path.insert(0, str(DEPENDENCIES[key]))
+        else:
+            if dependency_dir.exists():
+                DEPENDENCIES[key] = dependency_dir
+            else:
+                log("warning", "dependency :", key, "- not found")
+
+
+def init_logger():
+    """
+    creates logger object if parameter logging_active is true.
+    The logger has 2 handlers: One handler for showing logs in terminal
+    and one handler for saving logs in file.
+    """
+    logger = logging.getLogger('Engine V' + __version__)
+    logger.setLevel(logging.DEBUG)
+    formatter = logging.Formatter('%(asctime)s | %(name)s | %(levelname)s | %(message)s')
+    sh = logging.StreamHandler()
+    sh.setLevel(logging.WARNING)
+    sh.setFormatter(formatter)
+    logger.addHandler(sh)
+    if DEPENDENCIES['logs']:
+        fh = logging.handlers.RotatingFileHandler(filename="logs\\engine_logs_v" + __version__ + ".log",
+                                                  maxBytes=1048576, backupCount=5, encoding="utf-8")
+        fh.setLevel(logging.DEBUG)
+        fh.setFormatter(formatter)
+        logger.addHandler(fh)
+    return logger
+
+
+def log(logtype, *texts):
+    text = " ".join(texts)
+    if logtype.lower() == "info":
+        LOGGER.info(text)
+    elif logtype.lower() == "warning":
+        LOGGER.warning(text)
+    elif logtype.lower() == "error":
+        LOGGER.error(text)
+    else:
+        LOGGER.warning("message type incorrect. Message: " + text)
+
+
 class Engine:
-    def __init__(self, configfilepath, logging_active=False):
-        """
-        On initialisation of the engine, several objects are created,
-        """
-        self.init_logger(logging_active)
+    def __init__(self, configfilepath, enable_logging=0):
+        # On initialisation of the engine, several objects are created,
+        self.logging = enable_logging
+        init()
+        self.log("warning",
+                 "_____________________________ENGINE CREATION_____________________________ \n Engine version:",
+                 __version__)
         pg.init()
         gameentity.GameEntity.engine = self
         gameentity.GameEntity.set_subclasses()
@@ -57,35 +98,6 @@ class Engine:
         self.meanfps = 0
         self.count = 1
         self.log("info", "engine initialised successfully")
-
-    def init_logger(self, logging_active):
-        """
-        creates logger object if parameter logging_active is true.
-        The logger has 2 handlers: One handler for showing logs in terminal
-        and one handler for saving logs in file.
-        """
-        self.logging = logging_active
-        if self.logging:
-            self.logger = logging.getLogger('Engine V' + __version__)
-            self.logger.setLevel(logging.DEBUG)
-            formatter = logging.Formatter('%(asctime)s | %(name)s | %(levelname)s | %(message)s')
-            sh = logging.StreamHandler()
-            sh.setLevel(logging.WARNING)
-            sh.setFormatter(formatter)
-            self.logger.addHandler(sh)
-            if DEPENDENCIES['logs']:
-                fh = logging.handlers.RotatingFileHandler(filename="logs\\engine_logs_v" + __version__ + ".log",
-                                                          maxBytes=1048576, backupCount=5, encoding="utf-8")
-                fh.setLevel(logging.DEBUG)
-                fh.setFormatter(formatter)
-                self.logger.addHandler(fh)
-        self.log("warning", "_____________________________ENGINE CREATION_____________________________ \n Engine version:", __version__)
-        for dependency, value in DEPENDENCIES.items():
-            if not value:
-                self.log("warning", "dependency :", dependency, "- not found")
-            if isinstance(value, str):
-                if value.split(" - ")[0] in ["ImportError", "ModuleNotFoundError"]:
-                    self.log("error", "dependency :", dependency, "-", value)
 
     def run(self):
         while True:
@@ -105,15 +117,8 @@ class Engine:
 
     def log(self, logtype, *texts):
         if self.logging:
-            text = " ".join(texts)
-            if logtype.lower() == "info":
-                self.logger.info(text)
-            elif logtype.lower() == "warning":
-                self.logger.warning(text)
-            elif logtype.lower() == "error":
-                self.logger.error(text)
-            else:
-                self.logger.warning("message type incorrect. Message: " + text)
+            log(logtype, *texts)
+
             
     def get_events(self):
         return self.events
@@ -153,3 +158,6 @@ class Engine:
         logging.shutdown()
         pg.quit()
         sys.exit()
+
+
+LOGGER = init_logger()
