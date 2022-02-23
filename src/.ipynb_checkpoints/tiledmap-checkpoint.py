@@ -89,10 +89,10 @@ class Tileset(TiledObject):
 
         
     def load(self):
-        self.engine.datamanager.create_file(self.path, load = True)
+        self.engine._datamanager.create_file(self.path, load = True)
         self.data = self.get_data(self.source)
         self.imagepath = self.tiledmap.path+'\\'+self.data['image']
-        self.engine.datamanager.create_file(self.imagepath, load =True)
+        self.engine._datamanager.create_file(self.imagepath, load =True)
         self.image = self.get_data(self.data['image'])['img']
         self.create_tiles()
         

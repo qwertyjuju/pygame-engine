@@ -18,27 +18,7 @@ DEPENDENCIES = {
 __version__ = str(VER)
 
 
-def init_dependencies():
-    current_dir = Path.cwd()
-    for key in DEPENDENCIES.keys():
-        dependency_dir = Path.joinpath(current_dir, key)
-        if DEPENDENCIES[key] == "import":
-            try:
-                importlib.import_module(key)
-            except ModuleNotFoundError as e:
-                DEPENDENCIES[key] = "ModuleNotFoundError - " + str(e)
-                log("error", "dependency :", key, "-", DEPENDENCIES[key])
-            except ImportError as e:
-                DEPENDENCIES[key] = "ImportError - " + str(e)
-                log("error", "dependency :", key, "-", DEPENDENCIES[key])
-            else:
-                sys.path.insert(0, str(DEPENDENCIES[key]))
-                log("info", "dependency :", key, "-", "imported successfully")
-        else:
-            if dependency_dir.exists():
-                DEPENDENCIES[key] = dependency_dir
-            else:
-                log("warning", "dependency :", key, "- not found")
+
 
 
 def init_logger():
@@ -88,15 +68,15 @@ class Engine:
         self.events = None
         self.updatedict = {}
         self.updatelist = self.updatedict.values()
-        self.datamanager = managers.DataManager(self)
+        self._datamanager = managers.DataManager(self)
         self.config = self.get_data(configfilepath)
         self.log("info", "Engine config :", str(self.config))
         for path in self['dataconfig']['_preload']:
             self.load_data(path)
-        self.displaymanager = managers.DisplayManager(self)
+        self._displaymanager = managers.DisplayManager(self)
         self.clock = pg.time.Clock()
         self.meanfps = 0
-        init_dependencies()
+        self.init_dependencies()
         self.log("info", "engine initialised successfully")
 
     def run(self):
@@ -107,35 +87,34 @@ class Engine:
                     self.quit()
             for entity in self.updatelist:
                 entity().update()
-            self.displaymanager.update()        
+            self._displaymanager.update()
             self.clock.tick()
             self.fps = self.clock.get_fps()
             if self.meanfps == 0:
                 self.meanfps = self.fps
             self.meanfps = (self.meanfps+self.fps)/2
-            self.displaymanager.set_caption(self.fps)
+            self._displaymanager.set_caption(self.fps)
 
     def log(self, logtype, *texts):
         if self.logging:
             log(logtype, *texts)
 
-            
     def get_events(self):
         return self.events
     
     def get_data(self, dataname):
-        return self.datamanager[dataname]
+        return self._datamanager[dataname]
         
     def load_data(self, dataname, get=False):
-        data = self.datamanager.load(dataname, get)
+        data = self._datamanager.load(dataname, get)
         if get:
             return data
         
     def create_scene(self, sceneid, sceneareas=None):
-        return self.displaymanager.create_scene(sceneid, sceneareas)
+        return self._displaymanager.create_scene(sceneid, sceneareas)
 
     def get_scene(self, sceneid):
-        return self.displaymanager[sceneid]
+        return self._displaymanager[sceneid]
         
     def add_updatedentity(self, entity):
         self.updatedict[entity.entityID] = weakref.ref(entity)
@@ -158,6 +137,29 @@ class Engine:
         logging.shutdown()
         pg.quit()
         sys.exit()
+
+    @staticmethod
+    def init_dependencies():
+        current_dir = Path.cwd()
+        for key in DEPENDENCIES.keys():
+            dependency_dir = Path.joinpath(current_dir, key)
+            if DEPENDENCIES[key] == "import":
+                try:
+                    importlib.import_module(key)
+                except ModuleNotFoundError as e:
+                    DEPENDENCIES[key] = "ModuleNotFoundError - " + str(e)
+                    log("error", "dependency :", key, "-", DEPENDENCIES[key])
+                except ImportError as e:
+                    DEPENDENCIES[key] = "ImportError - " + str(e)
+                    log("error", "dependency :", key, "-", DEPENDENCIES[key])
+                else:
+                    sys.path.insert(0, str(DEPENDENCIES[key]))
+                    log("info", "dependency :", key, "-", "imported successfully")
+            else:
+                if dependency_dir.exists():
+                    DEPENDENCIES[key] = dependency_dir
+                else:
+                    log("warning", "dependency :", key, "- not found")
 
 
 LOGGER = init_logger()

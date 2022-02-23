@@ -25,6 +25,7 @@ class Scene(GameEntity):
     def __getitem__(self, item):
         return self.sceneareas[item]
 
+
 class SceneArea(GameEntity):
 
     def init(self, scene, pos, size):
