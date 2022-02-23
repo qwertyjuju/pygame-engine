@@ -21,6 +21,7 @@ class GameEntity:
     def __init__(self, *args, **kwargs):
         self.entityID = GameEntity._nbentity
         GameEntity._nbentity += 1
+        self.engine.addentity
         self._update = False
         if "update" in dir(self):
             self.set_update(True)
@@ -42,6 +43,7 @@ class GameEntity:
             self._update = False
 
     def __del__(self):
+        self.engine.log("info","Gamentity deleted:", str(type(self)))
         if self._update:
             self.engine.del_updatedentity(self)
 
@@ -67,3 +69,7 @@ class GameEntity:
     @classmethod
     def get_subclasses(cls):
         return cls._subclassdict
+
+    @classmethod
+    def get_engine(cls):
+        return cls.engine

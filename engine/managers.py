@@ -17,14 +17,18 @@ class DisplayManager:
                 self.screensize = (900, 900)
         self.screen = pg.display.set_mode(self.screensize)
         self.caption = "pygame"
+        self.init_scenes()
         self.engine.log("info", "Display Manager initialised. \n screensize :", str(self.screensize), "\n scenes :", str(self.scenes))
 
     def init_scenes(self):
         if 'scenes' in self.engine:
             if self.engine['scenes']:
                 self.scenesdata= self.engine.get_data(self.engine['scenes'])
-                for scenedata in self.scenesdata:
-                    self.create_scene(scenedata)
+                self.engine.log("info", "scenes data:", str(self.scenesdata))
+                for scenedata in self.scenesdata["scenes"]:
+                    self.create_scene(scenedata["ID"], scenedata["SceneAreas"])
+        else:
+            self.engine.log("warning", "No scene file given in engine settings")
 
     def set_caption(self, caption):
         self.caption = str(caption)
@@ -62,7 +66,7 @@ class DataManager:
         self.data = {}
         self.mainPath = Path.cwd()
         self.set_path(self.mainPath)
-        self.engine.log("info", "Data Manager initialised. Files : " + str(self.files))
+        self.engine.log("info", "Data Manager initialised.")
         
     def set_path(self, search_path):
         for path in search_path.iterdir():

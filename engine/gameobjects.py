@@ -13,12 +13,17 @@ class Scene(GameEntity):
         if sceneareas:
             for scenearea in sceneareas:
                 self.create_scenearea(**scenearea)
+        self.engine.log("info", "Scene created successfully. SceneID:", self.id)
+        self.display.add_scene(self)
 
-    def create_scenearea(self, ID, pos, size):
-        if ID not in self.sceneareas:
-            return
+    def create_scenearea(self, sceneareid, pos, size):
+        if sceneareid not in self.sceneareas:
+            return SceneArea(self, sceneareid, pos, size)
         else:
-            self.engine.log("warning", "")
+            self.engine.log("error", "SceneArea not created, sceneAreaID already exists. SceneAreaID:", sceneareid)
+
+    def add_scenearea(self, scenearea):
+        self.sceneareas[scenearea.id] = scenearea
 
     def get_subsurface(self, area):
         return self.display.screen.subsurface(area)
@@ -29,26 +34,35 @@ class Scene(GameEntity):
 
 class SceneArea(GameEntity):
 
-    def init(self, scene, pos, size):
+    def init(self, scene, sceneareaid, pos, size):
         self.scene = scene
+        self.id = sceneareaid
         self.render_list = []
         self.set_area(pos, size)
-        self.gamesurfaces = {}
+        self.objects = {}
         self.surface = self.scene.get_subsurface(self.area)
+        self.engine.log("info", "SceneArea created successfully. SceneAreaID:", self.id)
+        self.scene.add_scenearea(self)
 
     def set_area(self, pos, size):
         self.pos = pos
         self.size = size
         self.area = pos, size
 
-    def create_gamesurface(self, pos, type="Empty", *args, **kwargs):
+    def create_object(self, type="Empty", pos=[0, 0], *args, **kwargs):
         if type == "Empty":
             EmptyGameSurface(self, pos, *args, **kwargs)
         if type == "Image":
             ImageGameSurface(self, pos, *args, **kwargs)
+
+    def add_object(self, scenearea_object):
+        self.objects[scenearea_object.entityID] = scenearea_object
         
-    def add_gamesurface(self, gamesurface):
-        self.render_list.append([gamesurface.surface, gamesurface.pos])
+    def addto_renderlist(self, scenearea_object):
+        self.render_list.append([scenearea_object.surface, scenearea_object.pos])
+
+    def move_all(self):
+        pass
         
     def update(self):
         self.render()
@@ -66,7 +80,7 @@ class SceneAreaObject(GameEntity):
         self.scenearea = scenearea
         self.pos = Vec(pos)
         super().__init__()
-        self.scenearea.add_Gamesurface(self)
+        self.scenearea.add_object(self)
 
     def set_size(self, size):
         self.size=size

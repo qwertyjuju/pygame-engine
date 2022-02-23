@@ -20,9 +20,6 @@ DEPENDENCIES = {
 __version__ = str(VER)
 
 
-
-
-
 def init_logger():
     """
     creates logger object if parameter logging_active is true.
@@ -64,8 +61,6 @@ class Engine:
                  "_____________________________ENGINE CREATION_____________________________ \n Engine version:",
                  __version__)
         pg.init()
-        gameentity.GameEntity.init_gameentity(self)
-        self.log("info", "Gamentities :", str(gameentity.GameEntity.get_subclasses()))
         self.events = None
         self.updatedict = {}
         self.updatelist = self.updatedict.values()
@@ -78,6 +73,8 @@ class Engine:
         self.clock = pg.time.Clock()
         self.meanfps = 0
         self.init_dependencies()
+        gameentity.GameEntity.init_gameentity(self)
+        self.log("info", "Gamentities :", str(gameentity.GameEntity.get_subclasses()))
         self.log("info", "engine initialised successfully")
 
     def run(self):
@@ -99,12 +96,6 @@ class Engine:
     def log(self, logtype, *texts):
         if self.logging:
             log(logtype, *texts)
-
-    def get_events(self):
-        return self.events
-    
-    def get_data(self, dataname):
-        return self._datamanager[dataname]
         
     def load_data(self, dataname, get=False):
         data = self._datamanager.load(dataname, get)
@@ -113,6 +104,12 @@ class Engine:
         
     def create_scene(self, sceneid, sceneareas=None):
         return self._displaymanager.create_scene(sceneid, sceneareas)
+
+    def get_events(self):
+        return self.events
+
+    def get_data(self, datapath):
+        return self._datamanager[datapath]
 
     def get_scene(self, sceneid):
         return self._displaymanager[sceneid]
@@ -133,6 +130,7 @@ class Engine:
             return False
 
     def quit(self):
+        self.log("info", "quitting")
         self.log("info", "fps mean : "+str(self.meanfps))
         self.log("warning", "_____________________________ ENGINE QUIT _____________________________ \n")
         logging.shutdown()
