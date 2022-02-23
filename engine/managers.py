@@ -1,6 +1,8 @@
 import json
-import pygame as pg
 from pathlib import Path
+
+import pygame as pg
+
 from engine.gameobjects import Scene
 
 

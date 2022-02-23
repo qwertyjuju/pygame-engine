@@ -1,12 +1,14 @@
-import sys
-import logging
-import weakref
 import importlib
+import logging
 import logging.handlers
+import sys
+import weakref
 from pathlib import Path
+
 import pygame as pg
-import engine.managers as managers
+
 import engine.gameentity as gameentity
+import engine.managers as managers
 from engine.version import *
 
 DEPENDENCIES = {
@@ -62,8 +64,7 @@ class Engine:
                  "_____________________________ENGINE CREATION_____________________________ \n Engine version:",
                  __version__)
         pg.init()
-        gameentity.GameEntity.engine = self
-        gameentity.GameEntity.set_subclasses()
+        gameentity.GameEntity.init_gameentity(self)
         self.log("info", "Gamentities :", str(gameentity.GameEntity.get_subclasses()))
         self.events = None
         self.updatedict = {}

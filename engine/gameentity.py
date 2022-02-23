@@ -1,15 +1,4 @@
-def get_subclass(cls):
-    return cls.__subclasses__()
-
-
-def get_subclasses(cls):
-    classes = {}
-    for subclass in get_subclass(cls):
-        subclassname = subclass.__name__
-        classes[subclassname] = subclass
-        if get_subclass(subclass):
-            classes.update(get_subclasses(subclass))
-    return classes
+from engine.funcs import *
 
 
 class GameEntity:
@@ -57,7 +46,18 @@ class GameEntity:
             self.engine.del_updatedentity(self)
 
     @classmethod
-    def set_subclasses(cls):
+    def init_gameentity(cls, engine):
+        cls.engine = engine
+        cls._set_subclasses()
+        for gameentityclass in cls._subclassdict.values():
+            gameentityclass.init_class()
+
+    @classmethod
+    def init_class(cls):
+        pass
+
+    @classmethod
+    def _set_subclasses(cls):
         """
         Gets all the classes that inherits from GameEntity. This method must be called on
         the engine init.

@@ -1,9 +1,10 @@
 from engine.gameentity import GameEntity
 
 def init():
-    Map("data/")
+    World
 
 class World(GameEntity):
+    pass
 
 class Map(GameEntity):
     def init(self, dataname):
