@@ -35,8 +35,10 @@ class DisplayManager:
         
     def update(self):
         pg.display.set_caption(self.caption)
+        for area in self.active_scene:
+            area.render()
         pg.display.flip()
-        self.screen.fill((0, 0, 0))
+
 
     def create_scene(self, sceneid, sceneareas=None):
         if sceneid not in self.scenes:

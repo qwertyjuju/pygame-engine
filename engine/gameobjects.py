@@ -16,6 +16,10 @@ class Scene(GameEntity):
         self.engine.log("info", "Scene created successfully. SceneID:", self.id)
         self.display.add_scene(self)
 
+    def activate(self):
+        for area in self.sceneareas:
+            area.load()
+
     def create_scenearea(self, sceneareid, pos, size):
         if sceneareid not in self.sceneareas:
             return SceneArea(self, sceneareid, pos, size)
@@ -28,6 +32,9 @@ class Scene(GameEntity):
     def get_subsurface(self, area):
         return self.display.screen.subsurface(area)
 
+    def get_areas(self):
+        return self.sceneareas
+
     def __getitem__(self, item):
         return self.sceneareas[item]
 
@@ -37,9 +44,10 @@ class SceneArea(GameEntity):
     def init(self, scene, sceneareaid, pos, size):
         self.scene = scene
         self.id = sceneareaid
-        self.render_list = []
         self.set_area(pos, size)
         self.objects = {}
+        self.render_dict = {}
+        self.render_list = []
         self.surface = self.scene.get_subsurface(self.area)
         self.engine.log("info", "SceneArea created successfully. SceneAreaID:", self.id)
         self.scene.add_scenearea(self)
@@ -57,18 +65,17 @@ class SceneArea(GameEntity):
 
     def add_surface(self, scenearea_object):
         self.objects[scenearea_object.entityID] = scenearea_object
-        self.addto_renderlist(scenearea_object)
+        self.render_list.append([scenearea_object.surface, scenearea_object.pos])
         
-    def addto_renderlist(self, scenearea_object):
+    def update_surface(self, scenearea_object):
         self.render_list.append([scenearea_object.surface, scenearea_object.pos])
 
-    def move_all(self):
-        pass
-        
-    def update(self):
-        self.render()
+    def move_all(self, dx, dy):
+        for object in self.objects.values():
+            object.move(dx, dy)
         
     def render(self):
+        self.surface.fill(self.area)
         self.surface.blits(self.render_list)
         
     def clear(self):
