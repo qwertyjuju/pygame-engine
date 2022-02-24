@@ -61,6 +61,7 @@ class Engine:
                  "_____________________________ENGINE CREATION_____________________________ \n Engine version:",
                  __version__)
         pg.init()
+        gameentity.GameEntity.set_engine(self)
         self.events = None
         self.updatedict = {}
         self.updatelist = self.updatedict.values()
@@ -73,7 +74,7 @@ class Engine:
         self.clock = pg.time.Clock()
         self.meanfps = 0
         self.init_dependencies()
-        gameentity.GameEntity.init_gameentity(self)
+        gameentity.GameEntity.init_gameentity()
         self.log("info", "Gamentities :", str(gameentity.GameEntity.get_subclasses()))
         self.log("info", "engine initialised successfully")
 

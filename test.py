@@ -1,5 +1,5 @@
 import pygame as pg
-"""
+
 def main(sheight, swidth):
     pg.init()
     screen = pg.display.set_mode((sheight, swidth))
@@ -17,7 +17,7 @@ def main(sheight, swidth):
         #screen.fill((0, 0, 0), (200, 200, 300, 300))
         #screen.fill((0, 0, 0), (300, 300, 400, 400))
         #screen.fill((0, 0, 0), (400, 400, 500, 500))
-        #screen.blit(surface, pos)
+        screen.blit(surface, pos)
         #pos[0]-=1
         #pos[1]-=1
         pg.display.flip()
@@ -32,24 +32,11 @@ def main(sheight, swidth):
         pg.display.set_caption(fps)
 
 
-fpslist = main(1920, 1080)
+fpslist = main(1800, 1024)
 sumfps = 0
 for fps in fpslist:
     sumfps += fps
 moyfps = sumfps / len(fpslist)
 print(moyfps)
-"""
 
-
-class delobject:
-    def __del__(self):
-        print("object deleted")
-
-    def __delete__(self, instance):
-        print("bite")
-
-a = delobject()
-b= a
-del(a)
-print("end")
 

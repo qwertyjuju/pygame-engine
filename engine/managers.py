@@ -116,7 +116,7 @@ class DataManager:
                 except json.JSONDecodeError:
                     self.engine.log("error", "file : " + name + " - loaded unsuccessfully - JSON decode error.")
                     data = {}
-        if ext == '.png':
+        if ext in ['.png', '.jpg']:
             data = GameImage(path)
         if data:
             self.engine.log("info", "file : " + name + " - loaded successfully")
