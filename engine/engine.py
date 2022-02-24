@@ -74,7 +74,6 @@ class Engine:
         self.clock = pg.time.Clock()
         self.meanfps = 0
         self.init_dependencies()
-        gameentity.GameEntity.init_gameentity()
         self.log("info", "Gamentities :", str(gameentity.GameEntity.get_subclasses()))
         self.log("info", "engine initialised successfully")
 
@@ -134,6 +133,7 @@ class Engine:
         self.log("info", "quitting")
         self.log("info", "fps mean : "+str(self.meanfps))
         self.log("warning", "_____________________________ ENGINE QUIT _____________________________ \n")
+        self.logging = 0
         logging.shutdown()
         pg.quit()
         sys.exit()

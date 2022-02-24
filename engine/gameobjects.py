@@ -49,13 +49,13 @@ class SceneArea(GameEntity):
         self.size = size
         self.area = pos, size
 
-    def create_object(self, type, pos, *args, **kwargs):
+    def create_surface(self, type, pos, *args, **kwargs):
         if type.lower() == "empty":
             return EmptyGameSurface(self, pos, *args, **kwargs)
         if type.lower() == "image":
             return ImageGameSurface(self, pos, *args, **kwargs)
 
-    def add_object(self, scenearea_object):
+    def add_surface(self, scenearea_object):
         self.objects[scenearea_object.entityID] = scenearea_object
         self.addto_renderlist(scenearea_object)
         
@@ -80,12 +80,13 @@ class SceneAreaObject(GameEntity):
     def __init__(self, scenearea, pos, *args, **kwargs):
         self.scenearea = scenearea
         self.pos = Vec(pos)
-        self.surface=None
+        self.surface = None
         super().__init__(*args, **kwargs)
-        self.scenearea.add_object(self)
+        self.scenearea.add_surface(self)
 
     def convert(self):
-        self.surface.convert()
+        print(self.surface)
+        self.surface = self.surface.convert()
 
     def set_size(self, size):
         self.size=size
@@ -94,6 +95,9 @@ class SceneAreaObject(GameEntity):
         self.pos[0] += dx
         self.pos[1] += dy
 
+    @classmethod
+    def init_class(cls):
+        cls.set_subclasses()
 
 class EmptyGameSurface(SceneAreaObject):
 
@@ -122,3 +126,4 @@ class ImageGameSurface(SceneAreaObject):
     def init(self, imagename):
         self.surface = self.engine.get_data(imagename).get_surface()
         self.set_size(self.surface.get_size())
+        print(self.surface)

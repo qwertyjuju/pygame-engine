@@ -1,3 +1,4 @@
+import weakref
 from engine.funcs import *
 
 
@@ -10,8 +11,14 @@ class GameEntity:
     """
     engine = None
     _nbentity = 0
-    _subclassdict = None
+    _subclassdict = {}
+    _cls_name = None
     _entities = {}
+
+    def __init_subclass__(cls, **kwargs):
+        cls._cls_name= cls.__name__
+        cls._subclassdict[cls._cls_name]=cls
+        cls.init_class()
 
     def __new__(cls, *args, **kwargs):
         if GameEntity.engine is None:
@@ -52,22 +59,15 @@ class GameEntity:
             self.engine.del_updatedentity(self)
 
     @classmethod
-    def init_gameentity(cls):
-        cls._set_subclasses()
-        for gameentityclass in cls._subclassdict.values():
-            gameentityclass.init_class()
-
-    @classmethod
     def init_class(cls):
         pass
 
     @classmethod
-    def _set_subclasses(cls):
+    def set_subclasses(cls):
         """
-        Gets all the classes that inherits from GameEntity. This method must be called on
-        the engine init.
+        Gets all the classes that inherits from class. This function can be called in
         """
-        cls._subclassdict = get_subclasses(cls)
+        cls.subclassdict = get_subclasses(cls)
 
     @classmethod
     def get_subclasses(cls):
@@ -82,5 +82,21 @@ class GameEntity:
         return cls.engine
 
     @classmethod
+    def set_name(cls, name):
+        """
+        Sets the name of the class for the engine
+        """
+        if name not in cls._subclassdict:
+            del cls._subclassdict[cls._cls_name]
+            cls._cls_name= name
+            cls._subclassdict[cls._cls_name]=cls
+        else:
+            cls.engine.log("error", "can't set name, class name already exists.")
+
+    @classmethod
     def add_entity(cls, entity):
         cls._entities[entity.entityID] = entity
+
+
+class GameEntityContainer:
+    pass

@@ -6,11 +6,11 @@ def get_subclasses(cls):
     classes = {}
     for subclass in get_subclass(cls):
         try:
-            subclass.cls_id
+            subclass.__cls_name__
         except AttributeError:
             subclassname = subclass.__name__
         else:
-            subclassname = subclass.cls_id.lower()
+            subclassname = subclass.__cls_name__.lower()
         classes[subclassname] = subclass
         if get_subclass(subclass):
             classes.update(get_subclasses(subclass))

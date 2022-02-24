@@ -1,9 +1,10 @@
 import pygame as pg
-
+"""
 def main(sheight, swidth):
     pg.init()
     screen = pg.display.set_mode((sheight, swidth))
-    surface = pg.image.load("data\\map\\gamemap.jpg").convert()
+    surface = pg.image.load("data\\map\\gamemap.jpg").convert_alpha()
+    #surface =surface.convert()
     pos=[0, 0]
     timer = pg.time.Clock()
     fpslist = []
@@ -38,5 +39,29 @@ for fps in fpslist:
     sumfps += fps
 moyfps = sumfps / len(fpslist)
 print(moyfps)
+"""
 
 
+class B:
+    test = None
+    def __init_subclass__(cls, **kwargs):
+        cls.init_class()
+
+    @classmethod
+    def init_class(cls):
+        pass
+
+class A(B):
+
+    @classmethod
+    def init_class(cls):
+        cls.test="test"
+
+class C(A):
+    pass
+
+
+class D(C):
+    pass
+
+print(C.test)
