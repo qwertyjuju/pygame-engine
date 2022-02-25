@@ -57,9 +57,6 @@ class DisplayManager:
     def add_scene(self, scene):
         self.scenes[scene.id] = scene
 
-    def _del_scene(self):
-        pass
-
     def __getitem__(self, index):
         return self.scenes[index]
         

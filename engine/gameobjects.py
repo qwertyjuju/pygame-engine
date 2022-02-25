@@ -5,8 +5,8 @@ from engine.gameentity import GameEntity
 
 
 class Scene(GameEntity):
-
     _register = 0
+
     def init(self, display, sceneid, sceneareas=None):
         self.display = display
         self.id = sceneid
@@ -52,6 +52,7 @@ class Scene(GameEntity):
 
 class SceneArea(GameEntity):
     _register = 0
+
     def init(self, scene, sceneareaid, pos, size):
         self.scene = scene
         self.id = sceneareaid
@@ -121,6 +122,7 @@ class SceneAreaObject(GameEntity):
 
 
 class EmptyGameSurface(SceneAreaObject):
+    _register = 0
 
     def init(self, size, flag=None, convertalpha=False):
         self.set_size(size)
@@ -144,6 +146,8 @@ class EmptyGameSurface(SceneAreaObject):
 
 
 class ImageGameSurface(SceneAreaObject):
+    _register = 0
+
     def init(self, imagename):
         self.surface = self.engine.get_data(imagename).get_surface()
         self.set_size(self.surface.get_size())
