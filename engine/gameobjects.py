@@ -5,10 +5,12 @@ from engine.gameentity import GameEntity
 
 
 class Scene(GameEntity):
-    
+
+    _register = 0
     def init(self, display, sceneid, sceneareas=None):
         self.display = display
         self.id = sceneid
+        self._active = 0
         self.sceneareas = {}
         if sceneareas:
             for scenearea in sceneareas:
@@ -19,6 +21,13 @@ class Scene(GameEntity):
     def activate(self):
         for area in self.sceneareas:
             area.load()
+        self._active = 1
+        self.display.set_active_scene(self)
+
+    def deactivate(self):
+        for area in self.sceneareas:
+            area.unload()
+        self._active = 0
 
     def create_scenearea(self, sceneareid, pos, size):
         if sceneareid not in self.sceneareas:
@@ -28,6 +37,8 @@ class Scene(GameEntity):
 
     def add_scenearea(self, scenearea):
         self.sceneareas[scenearea.id] = scenearea
+        if self._active:
+            scenearea.load()
 
     def get_subsurface(self, area):
         return self.display.screen.subsurface(area)
@@ -40,7 +51,7 @@ class Scene(GameEntity):
 
 
 class SceneArea(GameEntity):
-
+    _register = 0
     def init(self, scene, sceneareaid, pos, size):
         self.scene = scene
         self.id = sceneareaid
@@ -48,7 +59,6 @@ class SceneArea(GameEntity):
         self.objects = {}
         self.render_dict = {}
         self.render_list = []
-        self.surface = self.scene.get_subsurface(self.area)
         self.engine.log("info", "SceneArea created successfully. SceneAreaID:", self.id)
         self.scene.add_scenearea(self)
 
@@ -73,9 +83,12 @@ class SceneArea(GameEntity):
     def move_all(self, dx, dy):
         for object in self.objects.values():
             object.move(dx, dy)
+
+    def load(self):
+        self.surface = self.scene.get_subsurface(self.area)
         
     def render(self):
-        self.surface.fill(self.area)
+        self.surface.fill((0,0,0),self.area)
         self.surface.blits(self.render_list)
         
     def clear(self):
@@ -83,6 +96,7 @@ class SceneArea(GameEntity):
 
         
 class SceneAreaObject(GameEntity):
+    _register = 0
 
     def __init__(self, scenearea, pos, *args, **kwargs):
         self.scenearea = scenearea
@@ -92,11 +106,10 @@ class SceneAreaObject(GameEntity):
         self.scenearea.add_surface(self)
 
     def convert(self):
-        print(self.surface)
         self.surface = self.surface.convert()
 
     def set_size(self, size):
-        self.size=size
+        self.size = size
 
     def move(self, dx, dy):
         self.pos[0] += dx
@@ -105,6 +118,7 @@ class SceneAreaObject(GameEntity):
     @classmethod
     def init_class(cls):
         cls.set_subclasses()
+
 
 class EmptyGameSurface(SceneAreaObject):
 
@@ -133,4 +147,3 @@ class ImageGameSurface(SceneAreaObject):
     def init(self, imagename):
         self.surface = self.engine.get_data(imagename).get_surface()
         self.set_size(self.surface.get_size())
-        print(self.surface)

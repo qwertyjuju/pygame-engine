@@ -7,17 +7,19 @@ class GameEntity:
     Base class of all game entities. Each game entity as access to the engine.
     If the Engine was not initialized, no objects will be created. Each game entity
     has an automatic distributed ID.
-    Each entity is added in a dictionary.
+    Each entity is added in a dictionary with their entity id.
     """
     engine = None
     _nbentity = 0
+    _register=1
     _subclassdict = {}
     _cls_name = None
     _entities = {}
 
     def __init_subclass__(cls, **kwargs):
-        cls._cls_name= cls.__name__
-        cls._subclassdict[cls._cls_name]=cls
+        cls._cls_name = cls.__name__
+        if cls._register:
+            cls._subclassdict[cls._cls_name]=cls
         cls.init_class()
 
     def __new__(cls, *args, **kwargs):
@@ -87,9 +89,12 @@ class GameEntity:
         Sets the name of the class for the engine
         """
         if name not in cls._subclassdict:
-            del cls._subclassdict[cls._cls_name]
-            cls._cls_name= name
-            cls._subclassdict[cls._cls_name]=cls
+            if cls._register:
+                del cls._subclassdict[cls._cls_name]
+                cls._cls_name = name
+                cls._subclassdict[cls._cls_name] = cls
+            else:
+                cls._cls_name = name
         else:
             cls.engine.log("error", "can't set name, class name already exists.")
 

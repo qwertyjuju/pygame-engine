@@ -1,5 +1,5 @@
 import pygame as pg
-"""
+
 def main(sheight, swidth):
     pg.init()
     screen = pg.display.set_mode((sheight, swidth))
@@ -39,9 +39,9 @@ for fps in fpslist:
     sumfps += fps
 moyfps = sumfps / len(fpslist)
 print(moyfps)
+
+
 """
-
-
 class B:
     test = None
     def __init_subclass__(cls, **kwargs):
@@ -65,3 +65,4 @@ class D(C):
     pass
 
 print(C.test)
+"""
