@@ -3,6 +3,11 @@
 		"ID": "scene1",
 		"SceneAreas":[
 		]
+	},
+	{
+		"ID": "scene2",
+		"SceneAreas":[
+		]
 	}
 ]
 }

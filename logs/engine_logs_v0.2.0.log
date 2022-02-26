@@ -2462,3 +2462,543 @@
 2022-02-26 00:50:35,637 | Engine V0.2.0 | INFO | fps mean : 434.50043952959595
 2022-02-26 00:50:35,638 | Engine V0.2.0 | WARNING | _____________________________ ENGINE QUIT _____________________________ 
 
+2022-02-26 13:57:54,220 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 13:57:55,856 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 13:57:55,858 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 13:57:55,858 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 13:57:55,925 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 13:57:55,925 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}]}
+2022-02-26 13:57:55,926 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 13:57:55,926 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x000001A54D9A6740>}
+2022-02-26 13:57:55,932 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 13:57:55,932 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 13:57:55,933 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 13:57:59,564 | Engine V0.2.0 | INFO | quitting
+2022-02-26 13:57:59,565 | Engine V0.2.0 | INFO | fps mean : 500.1085070372222
+2022-02-26 13:57:59,565 | Engine V0.2.0 | WARNING | _____________________________ ENGINE QUIT _____________________________ 
+
+2022-02-26 13:58:23,061 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 13:58:24,432 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 13:58:24,434 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 13:58:24,435 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 13:58:24,495 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 13:58:24,496 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}]}
+2022-02-26 13:58:24,496 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 13:58:24,497 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x00000245A7496740>}
+2022-02-26 13:58:24,531 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 13:58:24,532 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 13:58:24,977 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-02-26 13:58:24,998 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 13:58:24,999 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 13:58:24,999 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 13:58:38,916 | Engine V0.2.0 | INFO | quitting
+2022-02-26 13:58:38,917 | Engine V0.2.0 | INFO | fps mean : 431.64909590774096
+2022-02-26 13:58:38,917 | Engine V0.2.0 | WARNING | _____________________________ ENGINE QUIT _____________________________ 
+
+2022-02-26 14:04:58,656 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 14:04:58,783 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 14:04:58,801 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 14:04:58,802 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 14:04:59,052 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 14:04:59,052 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 14:04:59,053 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 14:04:59,054 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 14:04:59,054 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x00000243872F8B80>, 'scene2': <engine.gameobjects.Scene object at 0x00000243872F8790>}
+2022-02-26 14:04:59,076 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 14:04:59,076 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 14:04:59,395 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-02-26 14:04:59,414 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 14:04:59,414 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 14:04:59,415 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 14:05:01,077 | Engine V0.2.0 | INFO | quitting
+2022-02-26 14:05:01,077 | Engine V0.2.0 | INFO | fps mean : 169.61416458947375
+2022-02-26 14:05:01,078 | Engine V0.2.0 | WARNING | _____________________________ ENGINE QUIT _____________________________ 
+
+2022-02-26 14:06:25,042 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 14:06:26,421 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 14:06:26,423 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 14:06:26,423 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 14:06:26,482 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 14:06:26,482 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 14:06:26,483 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 14:06:26,484 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 14:06:26,484 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x0000022288A56770>, 'scene2': <engine.gameobjects.Scene object at 0x0000022288A56380>}
+2022-02-26 14:06:26,488 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 14:06:26,488 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 14:06:26,738 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-02-26 14:06:26,761 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 14:06:26,762 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 14:06:26,762 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 14:06:28,316 | Engine V0.2.0 | INFO | quitting
+2022-02-26 14:06:28,318 | Engine V0.2.0 | INFO | fps mean : 212.7844034168334
+2022-02-26 14:06:28,318 | Engine V0.2.0 | WARNING | _____________________________ ENGINE QUIT _____________________________ 
+
+2022-02-26 14:06:37,672 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 14:06:37,795 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 14:06:37,797 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 14:06:37,798 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 14:06:37,854 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 14:06:37,855 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 14:06:37,855 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 14:06:37,856 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 14:06:37,856 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x0000024F484F6770>, 'scene2': <engine.gameobjects.Scene object at 0x0000024F484F6380>}
+2022-02-26 14:06:37,866 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 14:06:37,867 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 14:06:38,164 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-02-26 14:06:38,181 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 14:06:38,182 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 14:06:38,182 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 14:06:39,691 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 14:06:39,691 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'src.main.Map'>
+2022-02-26 14:06:39,691 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.SceneArea'>
+2022-02-26 14:06:39,691 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.ImageGameSurface'>
+2022-02-26 14:06:39,691 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 14:07:54,043 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 14:07:55,400 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 14:07:55,401 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 14:07:55,402 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 14:07:55,455 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 14:07:55,455 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 14:07:55,456 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 14:07:55,457 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 14:07:55,457 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x0000026102D88B80>, 'scene2': <engine.gameobjects.Scene object at 0x0000026102D88790>}
+2022-02-26 14:07:55,461 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 14:07:55,461 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 14:07:55,712 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-02-26 14:07:55,735 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 14:07:55,736 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 14:07:55,736 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 14:07:57,273 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 14:07:57,273 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'src.main.Map'>
+2022-02-26 14:07:57,288 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.SceneArea'>
+2022-02-26 14:07:57,288 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.ImageGameSurface'>
+2022-02-26 14:07:57,288 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 14:12:06,647 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 14:12:08,029 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 14:12:08,030 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 14:12:08,031 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 14:12:08,093 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 14:12:08,093 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 14:12:08,094 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 14:12:08,094 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 14:12:08,095 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x00000221DA048B80>, 'scene2': <engine.gameobjects.Scene object at 0x00000221DA048790>}
+2022-02-26 14:12:08,098 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 14:12:08,099 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 14:12:08,357 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-02-26 14:12:08,379 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 14:12:08,380 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 14:12:08,380 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 14:12:10,000 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 14:12:10,000 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'src.main.Map'>
+2022-02-26 14:12:10,000 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.SceneArea'>
+2022-02-26 14:12:10,000 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.ImageGameSurface'>
+2022-02-26 14:12:10,000 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 14:12:28,258 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 14:12:29,630 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 14:12:29,632 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 14:12:29,632 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 14:12:29,693 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 14:12:29,694 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 14:12:29,695 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 14:12:29,696 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 14:12:29,696 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x000001D8300D8B80>, 'scene2': <engine.gameobjects.Scene object at 0x000001D8300D8790>}
+2022-02-26 14:12:29,701 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 14:12:29,702 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 14:12:29,948 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-02-26 14:12:29,966 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 14:12:29,967 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 14:12:29,967 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 14:12:31,521 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 14:12:31,521 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'src.main.Map'>
+2022-02-26 14:12:31,521 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.SceneArea'>
+2022-02-26 14:12:31,521 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.ImageGameSurface'>
+2022-02-26 14:12:31,521 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 14:14:07,750 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 14:14:09,120 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 14:14:09,122 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 14:14:09,123 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 14:14:09,179 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 14:14:09,180 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 14:14:09,180 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 14:14:09,181 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 14:14:09,181 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x000001A393A48B80>, 'scene2': <engine.gameobjects.Scene object at 0x000001A393A48790>}
+2022-02-26 14:14:09,184 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 14:14:09,184 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 14:14:09,436 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-02-26 14:14:09,459 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 14:14:09,460 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 14:14:09,460 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 14:14:10,773 | Engine V0.2.0 | INFO | quitting
+2022-02-26 14:14:10,774 | Engine V0.2.0 | INFO | fps mean : 208.69338558048878
+2022-02-26 14:14:10,774 | Engine V0.2.0 | WARNING | _____________________________ ENGINE QUIT _____________________________ 
+
+2022-02-26 14:15:18,798 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 14:15:20,187 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 14:15:20,189 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 14:15:20,190 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 14:15:20,246 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 14:15:20,246 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 14:15:20,247 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 14:15:20,247 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 14:15:20,248 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x000002CC6A828B80>, 'scene2': <engine.gameobjects.Scene object at 0x000002CC6A828790>}
+2022-02-26 14:15:20,250 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 14:15:20,251 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 14:15:20,502 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-02-26 14:15:20,526 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 14:15:20,526 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 14:15:20,527 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 14:15:22,053 | Engine V0.2.0 | INFO | quitting
+2022-02-26 14:15:22,054 | Engine V0.2.0 | INFO | fps mean : 217.18327070009542
+2022-02-26 14:15:22,054 | Engine V0.2.0 | WARNING | _____________________________ ENGINE QUIT _____________________________ 
+
+2022-02-26 14:15:31,902 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 14:15:32,038 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 14:15:32,041 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 14:15:32,042 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 14:15:32,109 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 14:15:32,109 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 14:15:32,110 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 14:15:32,110 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 14:15:32,111 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x000002BA31FA8B80>, 'scene2': <engine.gameobjects.Scene object at 0x000002BA31FA8790>}
+2022-02-26 14:15:32,114 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 14:15:32,115 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 14:15:32,500 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-02-26 14:15:32,521 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 14:15:32,521 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 14:15:32,522 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 14:15:33,741 | Engine V0.2.0 | INFO | quitting
+2022-02-26 14:15:33,742 | Engine V0.2.0 | INFO | fps mean : 208.20059270151506
+2022-02-26 14:15:33,742 | Engine V0.2.0 | WARNING | _____________________________ ENGINE QUIT _____________________________ 
+
+2022-02-26 14:17:24,048 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 14:17:25,483 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 14:17:25,485 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 14:17:25,485 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 14:17:25,543 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 14:17:25,543 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 14:17:25,544 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 14:17:25,544 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 14:17:25,545 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x000002264A078B50>, 'scene2': <engine.gameobjects.Scene object at 0x000002264A078760>}
+2022-02-26 14:17:25,547 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 14:17:25,548 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 14:17:25,802 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-02-26 14:17:25,829 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 14:17:25,829 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 14:17:25,830 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 14:17:27,361 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 14:17:27,377 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'src.main.Map'>
+2022-02-26 14:17:27,377 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.SceneArea'>
+2022-02-26 14:17:27,377 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.ImageGameSurface'>
+2022-02-26 14:17:27,377 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 14:21:15,428 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 14:21:16,806 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 14:21:16,807 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 14:21:16,808 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 14:21:16,865 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 14:21:16,865 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 14:21:16,866 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 14:21:16,867 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 14:21:16,867 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x00000264B5976770>, 'scene2': <engine.gameobjects.Scene object at 0x00000264B5976380>}
+2022-02-26 14:21:16,871 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 14:21:16,871 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 14:21:17,126 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-02-26 14:21:17,153 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 14:21:17,154 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 14:21:17,154 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 14:21:21,253 | Engine V0.2.0 | INFO | quitting
+2022-02-26 14:21:21,254 | Engine V0.2.0 | INFO | fps mean : 526.3727989329931
+2022-02-26 14:21:21,254 | Engine V0.2.0 | WARNING | _____________________________ ENGINE QUIT _____________________________ 
+
+2022-02-26 14:38:01,064 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 14:38:02,472 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 14:38:02,474 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 14:38:02,475 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 14:38:02,541 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 14:38:02,542 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 14:38:02,542 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 14:38:02,543 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 14:38:02,543 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x000001373CADD570>, 'scene2': <engine.gameobjects.Scene object at 0x000001373CADD180>}
+2022-02-26 14:38:02,551 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 14:38:02,551 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 14:38:02,721 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 14:38:02,721 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'src.main.Map'>
+2022-02-26 14:38:02,721 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.SceneArea'>
+2022-02-26 14:38:02,721 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 14:42:26,951 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 14:42:28,377 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 14:42:28,383 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 14:42:28,386 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 14:42:28,464 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 14:42:28,465 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 14:42:28,466 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 14:42:28,466 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 14:42:28,467 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x000002589D728A30>, 'scene2': <engine.gameobjects.Scene object at 0x000002589D728640>}
+2022-02-26 14:42:28,470 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 14:42:28,471 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 14:42:28,602 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 14:42:28,602 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'src.main.Map'>
+2022-02-26 14:42:28,606 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.SceneArea'>
+2022-02-26 14:42:28,606 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 15:32:07,473 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 15:32:07,535 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 15:32:07,538 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 15:32:07,538 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 15:32:07,608 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 15:32:07,608 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 15:32:07,609 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 15:32:07,609 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 15:32:07,610 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x00000223E4A0D540>, 'scene2': <engine.gameobjects.Scene object at 0x00000223E4A0D150>}
+2022-02-26 15:32:07,614 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 15:32:07,614 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 15:32:07,703 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 15:32:07,703 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'src.main.Map'>
+2022-02-26 15:32:07,703 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.SceneArea'>
+2022-02-26 15:32:07,703 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 15:32:43,473 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 15:32:43,531 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 15:32:43,533 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 15:32:43,533 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 15:32:43,598 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 15:32:43,600 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 15:32:43,600 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 15:32:43,601 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 15:32:43,602 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x000001A6CFF88AC0>, 'scene2': <engine.gameobjects.Scene object at 0x000001A6CFF886D0>}
+2022-02-26 15:32:43,605 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 15:32:43,606 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 15:32:43,686 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 15:32:43,686 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'src.main.Map'>
+2022-02-26 15:32:43,691 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.SceneArea'>
+2022-02-26 15:32:43,691 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 15:33:00,439 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 15:33:00,513 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 15:33:00,515 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 15:33:00,516 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 15:33:00,588 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 15:33:00,589 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 15:33:00,591 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 15:33:00,592 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 15:33:00,593 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x0000026C45BD8AC0>, 'scene2': <engine.gameobjects.Scene object at 0x0000026C45BD86D0>}
+2022-02-26 15:33:00,597 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 15:33:00,597 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 15:33:00,957 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-02-26 15:33:00,980 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 15:33:00,981 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 15:33:00,981 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 15:33:01,060 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 15:33:01,060 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'src.main.Map'>
+2022-02-26 15:33:01,060 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.SceneArea'>
+2022-02-26 15:33:01,060 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.ImageGameSurface'>
+2022-02-26 15:33:01,060 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 15:33:30,000 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 15:33:30,070 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 15:33:30,072 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 15:33:30,072 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 15:33:30,133 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 15:33:30,134 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 15:33:30,134 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 15:33:30,135 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 15:33:30,136 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x0000029807E967A0>, 'scene2': <engine.gameobjects.Scene object at 0x0000029807E963B0>}
+2022-02-26 15:33:30,144 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 15:33:30,144 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 15:33:30,447 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-02-26 15:33:30,472 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 15:33:30,473 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 15:33:30,473 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 15:33:37,863 | Engine V0.2.0 | INFO | quitting
+2022-02-26 15:33:37,864 | Engine V0.2.0 | INFO | fps mean : 555.5539083909596
+2022-02-26 15:33:37,864 | Engine V0.2.0 | WARNING | _____________________________ ENGINE QUIT _____________________________ 
+
+2022-02-26 15:33:55,767 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 15:33:55,826 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 15:33:55,828 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 15:33:55,828 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 15:33:55,889 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 15:33:55,889 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 15:33:55,890 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 15:33:55,890 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 15:33:55,891 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x00000271DB0767A0>, 'scene2': <engine.gameobjects.Scene object at 0x00000271DB0763B0>}
+2022-02-26 15:33:55,901 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 15:33:55,901 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 15:33:56,187 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-02-26 15:33:56,206 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 15:33:56,206 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 15:33:56,207 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 15:33:58,031 | Engine V0.2.0 | INFO | quitting
+2022-02-26 15:33:58,032 | Engine V0.2.0 | INFO | fps mean : 555.4005930019878
+2022-02-26 15:33:58,032 | Engine V0.2.0 | WARNING | _____________________________ ENGINE QUIT _____________________________ 
+
+2022-02-26 15:34:45,164 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 15:34:45,237 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 15:34:45,239 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 15:34:45,239 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 15:34:45,303 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 15:34:45,303 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 15:34:45,304 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 15:34:45,305 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 15:34:45,305 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x0000023D936D67A0>, 'scene2': <engine.gameobjects.Scene object at 0x0000023D936D63B0>}
+2022-02-26 15:34:45,310 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 15:34:45,311 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 15:34:45,596 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-02-26 15:34:45,615 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 15:34:45,615 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 15:34:45,615 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 15:34:48,661 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 15:34:48,661 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'src.main.Map'>
+2022-02-26 15:34:48,661 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.SceneArea'>
+2022-02-26 15:34:48,661 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.ImageGameSurface'>
+2022-02-26 15:34:48,661 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 15:34:54,373 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 15:34:54,434 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 15:34:54,436 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 15:34:54,436 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 15:34:54,497 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 15:34:54,498 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 15:34:54,499 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 15:34:54,499 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 15:34:54,500 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x00000223B44C67A0>, 'scene2': <engine.gameobjects.Scene object at 0x00000223B44C63B0>}
+2022-02-26 15:34:54,503 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 15:34:54,504 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 15:34:54,805 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-02-26 15:34:54,823 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 15:34:54,823 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 15:34:54,823 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 15:34:57,674 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 15:34:57,674 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'src.main.Map'>
+2022-02-26 15:34:57,674 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.SceneArea'>
+2022-02-26 15:34:57,674 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.ImageGameSurface'>
+2022-02-26 15:34:57,674 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 15:35:45,374 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 15:35:45,460 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 15:35:45,462 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 15:35:45,462 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 15:35:45,551 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 15:35:45,552 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 15:35:45,554 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 15:35:45,555 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 15:35:45,556 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x00000198871967A0>, 'scene2': <engine.gameobjects.Scene object at 0x00000198871963B0>}
+2022-02-26 15:35:45,558 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 15:35:45,559 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 15:35:45,810 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-02-26 15:35:45,830 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 15:35:45,830 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 15:35:45,831 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 15:35:48,795 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 15:35:48,800 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'src.main.Map'>
+2022-02-26 15:35:48,800 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.SceneArea'>
+2022-02-26 15:35:48,800 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.ImageGameSurface'>
+2022-02-26 15:35:48,800 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 20:51:53,398 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 20:51:53,660 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 20:51:53,667 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 20:51:53,669 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 20:51:53,796 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 20:51:53,796 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 20:51:53,797 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 20:51:53,798 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 20:51:53,798 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x00000285236B67A0>, 'scene2': <engine.gameobjects.Scene object at 0x00000285236B63B0>}
+2022-02-26 20:51:53,802 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 20:51:53,803 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 20:51:54,162 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-02-26 20:51:54,183 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 20:51:54,184 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 20:51:54,185 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 20:51:59,445 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 20:51:59,445 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'src.main.Map'>
+2022-02-26 20:51:59,445 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.SceneArea'>
+2022-02-26 20:51:59,447 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.ImageGameSurface'>
+2022-02-26 20:51:59,447 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 20:52:03,003 | Engine V0.2.0 | WARNING | _____________________________ENGINE CREATION_____________________________ 
+ Engine version: 0.2.0
+2022-02-26 20:52:03,083 | Engine V0.2.0 | INFO | Data Manager initialised.
+2022-02-26 20:52:03,085 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-02-26 20:52:03,086 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data\\scenes.json', 'dependencies': {'src': 'import'}, 'dataconfig': {'_preload': []}}
+2022-02-26 20:52:03,163 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-02-26 20:52:03,164 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-02-26 20:52:03,165 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-02-26 20:52:03,166 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-02-26 20:52:03,166 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x00000299325567A0>, 'scene2': <engine.gameobjects.Scene object at 0x00000299325563B0>}
+2022-02-26 20:52:03,176 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-02-26 20:52:03,177 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-02-26 20:52:03,639 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-02-26 20:52:03,659 | Engine V0.2.0 | INFO | dependency : src - imported successfully
+2022-02-26 20:52:03,660 | Engine V0.2.0 | INFO | Gamentities : {'Map': <class 'src.main.Map'>}
+2022-02-26 20:52:03,660 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-02-26 20:52:08,527 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>
+2022-02-26 20:52:08,527 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'src.main.Map'>
+2022-02-26 20:52:08,529 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.SceneArea'>
+2022-02-26 20:52:08,530 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.ImageGameSurface'>
+2022-02-26 20:52:08,531 | Engine V0.2.0 | INFO | Gamentity deleted: <class 'engine.gameobjects.Scene'>

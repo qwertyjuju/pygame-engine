@@ -19,13 +19,13 @@ class Scene(GameEntity):
         self.display.add_scene(self)
 
     def activate(self):
-        for area in self.sceneareas:
+        for area in self.sceneareas.values():
             area.load()
         self._active = 1
         self.display.set_active_scene(self)
 
     def deactivate(self):
-        for area in self.sceneareas:
+        for area in self.sceneareas.values():
             area.unload()
         self._active = 0
 
@@ -56,17 +56,28 @@ class SceneArea(GameEntity):
     def init(self, scene, sceneareaid, pos, size):
         self.scene = scene
         self.id = sceneareaid
-        self.set_area(pos, size)
+        self._active = 0
+        self.pos = pos
+        self.size = size
+        self.__set_area()
         self.objects = {}
         self.render_dict = {}
         self.render_list = []
         self.engine.log("info", "SceneArea created successfully. SceneAreaID:", self.id)
         self.scene.add_scenearea(self)
 
-    def set_area(self, pos, size):
+    def __set_area(self):
+        self.area = self.pos, self.size
+        if self._active:
+            self.load()
+
+    def set_pos(self, pos):
         self.pos = pos
+        self.__set_area()
+
+    def set_size(self, size):
         self.size = size
-        self.area = pos, size
+        self.__set_area()
 
     def create_surface(self, type, pos, *args, **kwargs):
         if type.lower() == "empty":
@@ -86,7 +97,13 @@ class SceneArea(GameEntity):
             object.move(dx, dy)
 
     def load(self):
+        self._active = 1
         self.surface = self.scene.get_subsurface(self.area)
+
+    def unload(self):
+        self._active = 0
+        self.surface.fill((0, 0, 0), self.area)
+        del self.surface
         
     def render(self):
         self.surface.fill((0,0,0),self.area)
