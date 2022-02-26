@@ -1,15 +1,6 @@
 from engine.gameentity import GameEntity
 
 
-def init():
-    Map("data\\map\\map.json", "scene1")
-
-
-class World(GameEntity):
-    def init(self, datapath, sceneid):
-        self.data = self.engine.get_data(datapath)
-
-
 class Map(GameEntity):
     def init(self, datapath, sceneid):
         self.data = self.engine.get_data(datapath)
@@ -23,4 +14,4 @@ class Map(GameEntity):
         self.bg.move(-1,-1)
 
 
-init()
+#Map("data\\map\\map.json", "scene1")

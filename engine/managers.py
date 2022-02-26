@@ -72,10 +72,10 @@ class DataManager:
         self.files = {}
         self.data = {}
         self.mainPath = Path.cwd()
-        self.set_path(self.mainPath)
         self.engine.log("info", "Data Manager initialised.")
         
     def set_path(self, search_path):
+        search_path = self.mainPath.joinpath(Path(search_path))
         for path in search_path.iterdir():
             relative_path = str(path.relative_to(self.mainPath))
             if path.is_dir():

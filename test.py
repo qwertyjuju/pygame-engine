@@ -1,5 +1,5 @@
 import pygame as pg
-
+"""
 def main(sheight, swidth):
     pg.init()
     screen = pg.display.set_mode((sheight, swidth))
@@ -39,8 +39,7 @@ for fps in fpslist:
     sumfps += fps
 moyfps = sumfps / len(fpslist)
 print(moyfps)
-
-
+"""
 """
 class B:
     test = None
@@ -65,4 +64,11 @@ class D(C):
     pass
 
 print(C.test)
+
 """
+from pathlib import Path
+
+a=Path("data/map/test")
+b = a.joinpath("../..")
+print(a.exists())
+print(b.parent)

@@ -1,0 +1,13 @@
+{
+	"screensize":[1800,1024],
+	"fullscreen":null,
+	"scenes": "data\\scenes.json",
+	"dependencies": {
+		"src": "import"
+	},
+	"dataconfig":
+	{
+		"_preload":[
+		]
+	}
+}

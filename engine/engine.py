@@ -66,6 +66,7 @@ class Engine:
         self.updatedict = {}
         self.updatelist = self.updatedict.values()
         self._datamanager = managers.DataManager(self)
+        self._datamanager.set_path("data")
         self.config = self.get_data(configfilepath)
         self.log("info", "Engine config :", str(self.config))
         for path in self['dataconfig']['_preload']:
