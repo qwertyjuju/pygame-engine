@@ -49,12 +49,12 @@ class DisplayManager:
 
     def set_active_scene(self, scene):
         if self._active_scene is not None:
-            self._active_scene.deactivate()
+            self._active_scene.e_deactivate()
             self._active_scene = scene
         else:
             self._active_scene = scene
 
-    def add_scene(self, scene):
+    def e_add_scene(self, scene):
         self.scenes[scene.id] = scene
 
     def __getitem__(self, index):

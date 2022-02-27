@@ -61,7 +61,7 @@ class Engine:
                  "_____________________________ENGINE CREATION_____________________________ \n Engine version:",
                  __version__)
         pg.init()
-        gameentity.GameEntity.set_engine(self)
+        gameentity.GameEntity.e_set_engine(self)
         self.events = None
         self.updatedict = {}
         self.updatelist = self.updatedict.values()
@@ -115,10 +115,10 @@ class Engine:
     def get_scene(self, sceneid):
         return self._displaymanager[sceneid]
         
-    def add_updatedentity(self, entity):
+    def e_add_updatedentity(self, entity):
         self.updatedict[entity.entityID] = weakref.ref(entity)
         
-    def del_updatedentity(self, entity):
+    def e_del_updatedentity(self, entity):
         del self.updatedict[entity.entityID]
 
     def __getitem__(self, index):

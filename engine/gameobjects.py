@@ -24,7 +24,7 @@ class Scene(GameEntity):
         self._active = 1
         self.display.set_active_scene(self)
 
-    def deactivate(self):
+    def e_deactivate(self):
         for area in self.sceneareas.values():
             area.unload()
         self._active = 0

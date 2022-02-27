@@ -46,10 +46,10 @@ class GameEntity:
         added or deleted from the engine update list.
         """
         if value:
-            self.engine.add_updatedentity(self)
+            self.engine.e_add_updatedentity(self)
             self._update = True
         if not value:
-            self.engine.del_updatedEntity(self)
+            self.engine.e_del_updatedEntity(self)
             self._update = False
 
     def delete(self):
@@ -76,7 +76,7 @@ class GameEntity:
         return cls._subclassdict
 
     @classmethod
-    def set_engine(cls, engine):
+    def e_set_engine(cls, engine):
         cls.engine = engine
 
     @classmethod

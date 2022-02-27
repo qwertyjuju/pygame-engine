@@ -7,16 +7,12 @@ class Map(GameEntity):
         self.scene = self.engine.get_scene(sceneid)
         self.scene1 = self.engine.get_scene(sceneid1)
         self.scene.activate()
-        self.size = [0,0]
-        self.area = self.scene.create_scenearea("Map", (0, 0), (3, 3))
+        self.area = self.scene.create_scenearea("Map", (0, 0), (1500, 1000))
         self.bg = self.area.create_surface("image", (0, 0), "data\\map\\gamemap.jpg")
         self.bg.convert()
 
     def update(self):
         self.bg.move(-1, -1)
-        self.size[0] += 1
-        self.size[1] += 1
-        self.area.set_size(self.size)
 
 
 Map("data\\map\\map.json", "scene1", "scene2")
