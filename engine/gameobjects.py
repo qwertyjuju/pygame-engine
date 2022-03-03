@@ -16,13 +16,13 @@ class Scene(GameEntity):
             for scenearea in sceneareas:
                 self.create_scenearea(**scenearea)
         self.engine.log("info", "Scene created successfully. SceneID:", self.id)
-        self.display.add_scene(self)
+        self.display.e_add_scene(self)
 
     def activate(self):
         for area in self.sceneareas.values():
             area.load()
         self._active = 1
-        self.display.set_active_scene(self)
+        self.display.e_set_active_scene(self)
 
     def e_deactivate(self):
         for area in self.sceneareas.values():
@@ -35,7 +35,7 @@ class Scene(GameEntity):
         else:
             self.engine.log("error", "SceneArea not created, sceneAreaID already exists. SceneAreaID:", sceneareid)
 
-    def add_scenearea(self, scenearea):
+    def e_add_scenearea(self, scenearea):
         self.sceneareas[scenearea.id] = scenearea
         if self._active:
             scenearea.load()
@@ -59,25 +59,20 @@ class SceneArea(GameEntity):
         self._active = 0
         self.pos = pos
         self.size = size
-        self.__set_area()
+        self.e_set_area()
         self.objects = {}
         self.render_dict = {}
         self.render_list = []
         self.engine.log("info", "SceneArea created successfully. SceneAreaID:", self.id)
-        self.scene.add_scenearea(self)
-
-    def __set_area(self):
-        self.area = self.pos, self.size
-        if self._active:
-            self.load()
+        self.scene.e_add_scenearea(self)
 
     def set_pos(self, pos):
         self.pos = pos
-        self.__set_area()
+        self.e_set_area()
 
     def set_size(self, size):
         self.size = size
-        self.__set_area()
+        self.e_set_area()
 
     def create_surface(self, type, pos, *args, **kwargs):
         if type.lower() == "empty":
@@ -111,6 +106,11 @@ class SceneArea(GameEntity):
         
     def clear(self):
         self.render_list.clear()
+
+    def e_set_area(self):
+        self.area = self.pos, self.size
+        if self._active:
+            self.load()
 
         
 class SceneAreaObject(GameEntity):

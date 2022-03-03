@@ -47,7 +47,7 @@ class DisplayManager:
         else:
             self.engine.log("error", "Scene not created, sceneID already exists. SceneID:", sceneid)
 
-    def set_active_scene(self, scene):
+    def e_set_active_scene(self, scene):
         if self._active_scene is not None:
             self._active_scene.e_deactivate()
             self._active_scene = scene
@@ -77,11 +77,12 @@ class DataManager:
     def set_path(self, search_path):
         search_path = self.mainPath.joinpath(Path(search_path))
         for path in search_path.iterdir():
-            relative_path = str(path.relative_to(self.mainPath))
+            relative_path = path.relative_to(self.mainPath).as_posix()
             if path.is_dir():
                 self.set_path(path)
             elif path.is_file():
                 self.files[relative_path] = path
+        print(self.files)
     
     def get_data(self, name):
         try:

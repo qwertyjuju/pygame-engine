@@ -58,7 +58,7 @@ class GameEntity:
     def __del__(self):
         self.engine.log("info","Gamentity deleted:", str(type(self)))
         if self._update:
-            self.engine.del_updatedentity(self)
+            self.engine.e_del_updatedentity(self)
 
     @classmethod
     def init_class(cls):
