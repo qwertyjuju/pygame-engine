@@ -1,9 +1,8 @@
-import json
 from pathlib import Path
-
 import pygame as pg
-
 from engine.gameobjects import Scene
+from engine.gameexceptions import *
+import engine.loadfuncs as lf
 
 
 class DisplayManager:
@@ -24,7 +23,7 @@ class DisplayManager:
     def init_scenes(self):
         if 'scenes' in self.engine:
             if self.engine['scenes']:
-                self.scenesdata= self.engine.get_data(self.engine['scenes'])
+                self.scenesdata = self.engine.get_data(self.engine['scenes'])
                 self.engine.log("info", "scenes data:", str(self.scenesdata))
                 for scenedata in self.scenesdata["scenes"]:
                     self.create_scene(scenedata["ID"], scenedata["SceneAreas"])
@@ -65,6 +64,7 @@ class DataManager:
     """
     Data Manager. All game data is stored in the data manager
     """
+    _loadfuncs=lf.LOADFUNCS
 
     def __init__(self, engine, configfile=None):
         self.engine = engine
@@ -82,8 +82,7 @@ class DataManager:
                 self.set_path(path)
             elif path.is_file():
                 self.files[relative_path] = path
-        print(self.files)
-    
+
     def get_data(self, name):
         try:
             self.data[name]
@@ -107,7 +106,8 @@ class DataManager:
         try:
             self.files[path_name]
         except KeyError:
-            raise FileNotFound()
+            print(self.files)
+            raise FileNotFound(path_name)
         else:
             self._load(path_name)
         if get:
@@ -117,19 +117,17 @@ class DataManager:
         path = self.files[name]
         ext = path.suffix
         data = None
-        if ext == '.json':
-            with path.open('r') as file:
-                try:
-                    data = json.load(file)
-                except json.JSONDecodeError:
-                    self.engine.log("error", "file : " + name + " - loaded unsuccessfully - JSON decode error.")
-                    data = {}
-        if ext in ['.png', '.jpg']:
-            data = GameImage(path)
-        if data:
-            self.engine.log("info", "file : " + name + " - loaded successfully")
+        if ext in self._loadfuncs.keys():
+            try:
+                data = self._loadfuncs[ext](path)
+            except Exception as e:
+                self.engine.log("error", f"file : {name} - loaded unsuccessfully, {e}")
         else:
-            self.engine.log("warning", "file : " + name + " - no data loaded")
+            self.engine.log("warning", f"{ext} extension not know, file: {name} not loaded")
+        if data:
+            self.engine.log("info", f"file : {name} - loaded successfully")
+        else:
+            self.engine.log("warning", f"file : {name} - no data loaded")
         self.data[name] = data
 
     def save(self, pathname):
@@ -186,291 +184,46 @@ class DataManager:
         return self.data[index]
 
 
-class GameImage:
-    image = None
+class EventManager:
+    def __init__(self, engine):
+        self.engine = engine
+        self._events = {
+            "Quit": self.engine.quit,
+            "KeyDown": self.keydown,
+            "KeyUp": self.keyup
+        }
+        self._eventkeys=self._events.keys()
+        self.keydown_listeners = {}
 
-    def __init__(self, imageloc):
-        self.loc = imageloc
-        self.load()
-    
-    def load(self):
-        self.surface = pg.image.load(self.loc).convert_alpha()
-        
-    def get_tile(self, x, y, size):
-        newsurf = pg.Surface(size, pg.SRCALPHA).convert_alpha()
-        newsurf.blit(self.image, (-x, -y))
-        return newsurf
-
-    def get_surface(self):
-        return self.surface
-
-
-class DataManagerException(Exception):
-
-    def __init__(self, message=None):
-        if message:
-            super().__init__(message)
-        else:
-            super().__init__()
-
-
-class FileNotFound(DataManagerException):
-    _message = 'File not in files dictionnary of data manager'
-
-    def __init__(self, filename=None):
-        if filename:
-            super().__init__(FileNotFound._message+filename)
-        else:
-            super().__init__(FileNotFound._message)
-
-
-class DirectoryNonExistent(DataManagerException):
-    _message = "Directory not found. Process stopped"
-
-    def __init__(self, dirname=None):
-        if dirname:
-            super().__init__(DirectoryNonExistent._message + dirname)
-        else:
-            super().__init__(DirectoryNonExistent._message)
-
-
-"""
-class EventManager(Manager):
-    def init(self):
-        self.signals={}
-        self.listenedevents = self.signals.keys()
-        
     def update(self):
         for event in pg.event.get():
+            evname = pg.event.event_name(event.type)
+            if evname in self._eventkeys:
+                self._events[evname]()
+
+    def add_keydown_listener(self):
+        pass
+
+    def keydown(self):
+        pass
+
+    def keyup(self):
+        pass
+
+
+class Listener:
+
+    def __init__(self, manager, func, funcparams, key=None, cooldown=30):
+        self.manager = manager
+        self.active = 0
+
+"""
             if event.type == pg.QUIT:
                 self.engine.quit()
-            if event.type== pg.KEYDOWN:
-                if event.key in self.listenedevents:
-                    self.listeners[event.key]
-    
-    def add_signal(self,listener):
-        self.signals[signal.keycode]= signal
-        
-        
-        
-class Signal:
-    keynamelist =[
-        'backspace',
-        'tab',
-        'clear',
-        'return',
-        'pause',
-        'escape',
-        'space',
-        'exclaim',
-        'quotedbl',
-        'hash',
-        'dollar',
-        'ampersand',
-        'quote',
-        'left parenthesis',
-        'right parenthesis',
-        'asterisk',
-        'plus sign',
-        'comma',
-        'minus sign',
-        'period',
-        'forward slash',
-        '0',
-        '1',
-        '2',
-        '3',
-        '4',
-        '5',
-        '6',
-        '7',
-        '8',
-        '9',
-        'colon',
-        'semicolon',
-        'less-than sign',
-        'equals sign',
-        'greater-than sign',
-        'question mark',
-        'at',
-        'left bracket',
-        'backslash',
-        'right bracket',
-        'caret',
-        'underscore',
-        'grave',
-        'a',
-        'b',
-        'c',
-        'd',
-        'e',
-        'f',
-        'g',
-        'h',
-        'i',
-        'j',
-        'k',
-        'l',
-        'm',
-        'n',
-        'o',
-        'p',
-        'q',
-        'r',
-        's',
-        't',
-        'u',
-        'v',
-        'w',
-        'x',
-        'y',
-        'z',
-        'delete',
-        'keypad 0',
-        'keypad 1',
-        'keypad 2',
-        'keypad 3',
-        'keypad 4',
-        'keypad 5',
-        'keypad 6',
-        'keypad 7',
-        'keypad 8',
-        'keypad 9',
-        'keypad period',
-        'keypad divide',
-        'keypad multiply',
-        'keypad minus',
-        'keypad plus',
-        'keypad enter',
-        'keypad equals',
-        'up arrow',
-        'down arrow',
-        'right arrow',
-        'left arrow',
-        'insert',
-        'home',
-        'end',
-        'page up',
-        'page down',
-        'F1',
-        'F2',
-        'F3',
-        'F4',
-        'F5',
-        'F6',
-        'F7',
-        'F8',
-        'F9',
-        'F10',
-        'F11',
-        'F12',
-        'F13',
-        'F14',
-        'F15',
-        'numlock',
-        'capslock',
-        'scrollock',
-        'right shift',
-        'left shift',
-        'right control',
-        'left control',
-        'right alt',
-        'left alt',
-        'right meta',
-        'left meta',
-        'left Windows key',
-        'right Windows key',
-        'mode shift',
-        'help',
-        'print screen',
-        'sysrq',
-        'break',
-        'menu',
-        'power',
-        'Euro',
-    ]
-    
-    def __new__(cls,*args,**kwargs):
-        try:
-            args[0].keydict[args[1]]
-        except KeyError:
-            print('Signal not created, keyname not in list')
-        else:
-            return super().__new__(cls)
-    def __init__(self,manager,eventname):
-        self.manager =manager
-        self.keycode= pg.key.keycode(eventname)
-        self.connections={}
-        self.manager.add_signal(self)
-        
-    def connect(self,func, *paramlist):
-        self.connections[func]
-    
-    def activate(self):
-        for func in self.connections:
-            func()
-            
-            
-class DataManager(Manager):
-    def init(self, configfilepath):
-        self.files = {}
-        self.data = {}
-        self.createfile(configfilepath,'_config',load=True)
-        
-    def init_config(self):
-        self.config = self.get_data('_config')
-        config = self.config['DataConfig']
-        try:
-            config['_preload']
-        except KeyError:
-            print('no preload instructions, no file preloaded')
-        else:
-            for path in config['_preload']:
-                self.createfile(path,load=True)
-        
-            
-    def createfile(self, filepath, customfilename= None, load = False):
-        file = GameFile(self,filepath, customfilename)
-        if load:
-            self.loadfile(file.name)
-
-    def addfile(self, file):
-        try:
-            self.files[file.name]
-        except KeyError:
-            pass
-        else:
-            print('file already exists. It will be replaced by new file')
-        self.files[file.name]= file
-        
-    
-    def loadfile(self, filename):
-        self.files[filename].load()
-    
-    def add_data(self, file, data):
-        try:
-            self.data[file.name]
-        except KeyError:
-            pass
-        else:
-            print('data already loaded for file:',name, datatype,'the content will be replaced by new data')
-        self.data[file.name] = data
-                
-    def __delitem__(self, index):
-        try:
-            self.data[index]
-        except KeyError:
-            print('File not found, not deleted:', index)
-        else:
-            del self.data[index]
-            print('File deleted:', index)
-
-    def __getitem__(self, index):
-        try:
-            self.data[index]
-        except KeyError:
-            print('Data not loaded. Check if file was correctly loaded')
-            return
-        else:
-            return self.data[index]
+            if event.type == pg.KEYDOWN:
+                pass
+            if event.type == pg.KEYUP:
+                pass
+            if event.type == pg.MOUSEMOTION:
+                pass
 """

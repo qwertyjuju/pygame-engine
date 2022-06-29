@@ -49,7 +49,7 @@ class GameEntity:
             self.engine.e_add_updatedentity(self)
             self._update = True
         if not value:
-            self.engine.e_del_updatedEntity(self)
+            self.engine.e_del_updatedentity(self)
             self._update = False
 
     def delete(self):
@@ -101,6 +101,10 @@ class GameEntity:
     @classmethod
     def add_entity(cls, entity):
         cls._entities[entity.entityID] = entity
+
+    @classmethod
+    def get_entity(cls, entityid):
+        return cls._entities[entityid]
 
 
 class GameEntityContainer:

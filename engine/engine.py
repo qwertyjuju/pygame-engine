@@ -13,8 +13,8 @@ from engine.version import *
 
 DEPENDENCIES = {
     "src": "import",
-    "logs": 0,
-    "data": 0
+    "logs": "",
+    "data": ""
 }
 
 __version__ = str(VER)
@@ -33,7 +33,7 @@ def init_logger():
     sh.setLevel(logging.WARNING)
     sh.setFormatter(formatter)
     logger.addHandler(sh)
-    fh = logging.handlers.RotatingFileHandler(filename="logs\\engine_logs_v" + __version__ + ".log",
+    fh = logging.handlers.RotatingFileHandler(filename=f"{DEPENDENCIES['logs']}\\logs{__version__}.log",
                                               maxBytes=1048576, backupCount=5, encoding="utf-8")
     fh.setLevel(logging.DEBUG)
     fh.setFormatter(formatter)
@@ -160,7 +160,7 @@ class Engine:
                 if dependency_dir.exists():
                     DEPENDENCIES[key] = dependency_dir
                 else:
-                    log("warning", "dependency :", key, "- not found")
+                    log("warning", f"dependency : {key} - not found, dependency dir: {dependency_dir}")
 
 
 LOGGER = init_logger()
