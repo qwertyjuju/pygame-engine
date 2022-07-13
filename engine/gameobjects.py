@@ -5,6 +5,10 @@ from engine.gameentity import GameEntity
 
 
 class Scene(GameEntity):
+    """
+    class for creating a Scene. Ech Scene can have several Scene Areas,
+    controlling a part of the diplay.
+    """
     _register = 0
 
     def init(self, display, sceneid, sceneareas=None):
@@ -19,6 +23,9 @@ class Scene(GameEntity):
         self.display.e_add_scene(self)
 
     def activate(self):
+        """
+        sets up
+        """
         for area in self.sceneareas.values():
             area.load()
         self._active = 1
@@ -29,7 +36,14 @@ class Scene(GameEntity):
             area.unload()
         self._active = 0
 
-    def create_scenearea(self, sceneareid, pos, size):
+    def create_scenearea(self, sceneareid:str, pos:tuple, size:tuple):
+        """
+        creates a new scene area in the scene
+        @param sceneareid:
+        @param pos:
+        @param size:
+        @return:
+        """
         if sceneareid not in self.sceneareas:
             return SceneArea(self, sceneareid, pos, size)
         else:
@@ -51,6 +65,9 @@ class Scene(GameEntity):
 
 
 class SceneArea(GameEntity):
+    """
+    SceneArea class.
+    """
     _register = 0
 
     def init(self, scene, sceneareaid, pos, size):
@@ -66,7 +83,11 @@ class SceneArea(GameEntity):
         self.engine.log("info", "SceneArea created successfully. SceneAreaID:", self.id)
         self.scene.e_add_scenearea(self)
 
-    def set_pos(self, pos):
+    def set_pos(self, pos:tuple):
+        """
+
+        @param pos:
+        """
         self.pos = pos
         self.e_set_area()
 

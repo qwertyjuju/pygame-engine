@@ -229,3 +229,25 @@
 2022-07-13 22:34:11,551 | Engine V0.2.0 | INFO | quitting
 2022-07-13 22:34:11,552 | Engine V0.2.0 | INFO | _____________________________ ENGINE QUIT _____________________________ 
 
+2022-07-13 22:36:50,868 | Engine V0.2.0 | INFO | _____________________________GAME START_____________________________ 
+ Engine version: 0.2.0
+2022-07-13 22:37:44,886 | Engine V0.2.0 | INFO | _____________________________GAME START_____________________________ 
+ Engine version: 0.2.0
+2022-07-13 22:37:44,888 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-07-13 22:37:44,888 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data|scenes.json', 'dataconfig': {'_preload': []}}
+2022-07-13 22:37:45,234 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-07-13 22:37:45,235 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-07-13 22:37:45,235 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-07-13 22:37:45,236 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-07-13 22:37:45,237 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x0000016E41812920>, 'scene2': <engine.gameobjects.Scene object at 0x0000016E41812980>}
+2022-07-13 22:37:45,240 | Engine V0.2.0 | INFO | file : data\map\world.world - loaded successfully
+2022-07-13 22:37:45,242 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-07-13 22:37:45,243 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-07-13 22:37:45,525 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-07-13 22:37:45,545 | Engine V0.2.0 | INFO | Gamentities : {'World': <class 'src.main.World'>, 'Map': <class 'src.main.Map'>, 'Player': <class 'src.main.Player'>}
+2022-07-13 22:37:45,545 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-07-13 22:38:12,410 | Engine V0.2.0 | INFO | quitting
+2022-07-13 22:38:12,410 | Engine V0.2.0 | INFO | _____________________________ ENGINE QUIT _____________________________ 
+
