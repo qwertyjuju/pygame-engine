@@ -1,4 +1,5 @@
 import json
+import pygame as pg
 
 
 def load_json(path):
@@ -9,6 +10,11 @@ def load_json(path):
 
 def load_img(path):
     return GameImage(path)
+
+
+def save_json(path, data):
+    with path.open('w') as file:
+        json.dump(data, file, indent=4)
 
 
 class GameImage:

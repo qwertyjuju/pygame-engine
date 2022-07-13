@@ -24,7 +24,7 @@ class DataManagerException(Exception):
 
 
 class FileNotFound(DataManagerException):
-    _message = 'File not in files dictionnary of data manager '
+    _message = 'File not in files dictionnary of data manager (path not set). '
 
     def __init__(self, filename=None):
         if filename:

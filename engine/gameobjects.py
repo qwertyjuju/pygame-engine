@@ -94,6 +94,7 @@ class SceneArea(GameEntity):
     def load(self):
         self._active = 1
         self.surface = self.scene.get_subsurface(self.area)
+        self.rect = self.surface.get_rect()
 
     def unload(self):
         self._active = 0
@@ -111,6 +112,13 @@ class SceneArea(GameEntity):
         self.area = self.pos, self.size
         if self._active:
             self.load()
+
+    def __contains__(self, coor):
+        if self._active:
+            return self.surface.get_rect.contains(coor)
+        else:
+            return 0
+
 
         
 class SceneAreaObject(GameEntity):

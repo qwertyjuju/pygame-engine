@@ -1,4 +1,4 @@
-import weakref
+from pathlib import Path
 from engine.funcs import *
 
 
@@ -11,7 +11,7 @@ class GameEntity:
     """
     engine = None
     _nbentity = 0
-    _register=1
+    _register = 1
     _subclassdict = {}
     _cls_name = None
     _entities = {}
@@ -106,6 +106,9 @@ class GameEntity:
     def get_entity(cls, entityid):
         return cls._entities[entityid]
 
+    @staticmethod
+    def get_datapath(pathname):
+        return Path().joinpath(*pathname.split("|"))
 
 class GameEntityContainer:
     pass

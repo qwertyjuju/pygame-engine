@@ -1,5 +1,7 @@
+import pathlib
 import pygame as pg
-"""
+import json
+
 def main(sheight, swidth):
     pg.init()
     screen = pg.display.set_mode((sheight, swidth))
@@ -14,6 +16,8 @@ def main(sheight, swidth):
                 pg.quit()
                 return fpslist
         screen.fill((0, 0, 0))
+        pos[0]-=1
+        pos[1]-=1
         #screen.fill((0, 0, 0), (100, 100, 200, 200))
         #screen.fill((0, 0, 0), (200, 200, 300, 300))
         #screen.fill((0, 0, 0), (300, 300, 400, 400))
@@ -39,7 +43,7 @@ for fps in fpslist:
     sumfps += fps
 moyfps = sumfps / len(fpslist)
 print(moyfps)
-"""
+
 """
 class B:
     test = None
@@ -64,8 +68,8 @@ class D(C):
     pass
 
 print(C.test)
-
 """
+
 """
 from pathlib import Path
 
@@ -73,6 +77,8 @@ a=Path("data/map/test")
 b = a.joinpath("../..")
 print(a.exists())
 print(b.parent)
+"""
+
 """
 def main(sheight, swidth):
     pg.init()
@@ -115,3 +121,4 @@ for fps in fpslist:
     sumfps += fps
 moyfps = sumfps / len(fpslist)
 print(moyfps)
+"""

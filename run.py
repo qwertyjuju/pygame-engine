@@ -1,10 +1,9 @@
-from engine import Engine
+from engine import ENGINE
 
 
-def main():        
-    g = Engine('data/settings.json', enable_logging=1)
-    g.run()
-
+def main():
+    ENGINE.set_logger()
+    ENGINE.run('data|settings.json')
 
 if __name__ == '__main__':
     main()
