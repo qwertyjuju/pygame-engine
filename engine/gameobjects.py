@@ -2,11 +2,19 @@ import pygame as pg
 from pygame.math import Vector2 as Vec
 
 from engine.gameentity import GameEntity
+"""
+.. module:: useful_1
+   :platform: Unix, Windows
+   :synopsis: A useful module indeed.
 
+.. moduleauthor:: Andrew Carter <andrew@invalid.com>
+
+
+"""
 
 class Scene(GameEntity):
     """
-    class for creating a Scene. Ech Scene can have several Scene Areas,
+    class for creating a Scene. Each Scene can have several Scene Areas,
     controlling a part of the diplay.
     """
     _register = 0
@@ -24,7 +32,8 @@ class Scene(GameEntity):
 
     def activate(self):
         """
-        sets up
+        Activates the scene. Loads all scene areas in the scene
+        :return:
         """
         for area in self.sceneareas.values():
             area.load()
@@ -32,17 +41,21 @@ class Scene(GameEntity):
         self.display.e_set_active_scene(self)
 
     def e_deactivate(self):
+        """
+        Deactivates the scene. Unloads all scene areas in the scene
+        :return:
+        """
         for area in self.sceneareas.values():
             area.unload()
         self._active = 0
 
     def create_scenearea(self, sceneareid:str, pos:tuple, size:tuple):
         """
-        creates a new scene area in the scene
-        @param sceneareid:
-        @param pos:
-        @param size:
-        @return:
+        creates a new secneArea in the scene
+        :param sceneareid:
+        :param pos:
+        :param size:
+        :return:
         """
         if sceneareid not in self.sceneareas:
             return SceneArea(self, sceneareid, pos, size)
@@ -85,20 +98,34 @@ class SceneArea(GameEntity):
 
     def set_pos(self, pos:tuple):
         """
-
-        @param pos:
+        sets position of the area in the scene
+        :param pos:
+        :return:
         """
         self.pos = pos
         self.e_set_area()
 
     def set_size(self, size):
+        """
+        sets size of the area.
+        :param size:
+        :return:
+        """
         self.size = size
         self.e_set_area()
 
-    def create_surface(self, type, pos, *args, **kwargs):
-        if type.lower() == "empty":
+    def create_surface(self, surf_type:str, pos:tuple, *args, **kwargs):
+        """
+        creates a new surface in the scene area of type 'surf_type'.
+        :param surf_type: surface type to be creates
+        :param pos: position of the surface in the scene area
+        :param args:
+        :param kwargs:
+        :return:
+        """
+        if surf_type.lower() == "empty":
             return EmptyGameSurface(self, pos, *args, **kwargs)
-        if type.lower() == "image":
+        if surf_type.lower() == "image":
             return ImageGameSurface(self, pos, *args, **kwargs)
 
     def add_surface(self, scenearea_object):

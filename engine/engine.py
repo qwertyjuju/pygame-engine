@@ -17,6 +17,9 @@ __version__ = str(VER)
 
 
 class Engine:
+    """
+    main class for the engine
+    """
     _DEPENDENCIES = {
         "import": ["src"],
         "set_path": ["data"]
@@ -35,6 +38,8 @@ class Engine:
         creates logger object if parameter logging_active is true.
         The logger has 2 handlers: One handler for showing logs in terminal
         and one handler for saving logs in file.
+        :param logspath:
+        :return:
         """
         self._logger = logging.getLogger('Engine V' + __version__)
         self._logger.setLevel(logging.DEBUG)
