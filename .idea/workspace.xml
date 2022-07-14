@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0ecfd24-6d2e-4a27-9208-19730c8798ae" name="Default Changelist" comment="" />
+    <list default="true" id="c3746061-0db3-40f0-9eaa-d68298d3c9d6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/.buildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/.buildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/.doctrees/docs.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/.doctrees/docs.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/.doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/.doctrees/environment.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/_sources/docs.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/_sources/docs.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/_static/_sphinx_javascript_frameworks_compat.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/_static/_sphinx_javascript_frameworks_compat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/_static/css/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/_static/css/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/_static/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/_static/css/theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/_static/doctools.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/_static/doctools.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/_static/jquery-3.6.0.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/_static/jquery-3.6.0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/_static/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/_static/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/_static/js/html5shiv-printshiv.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/_static/js/html5shiv-printshiv.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/_static/js/html5shiv.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/_static/js/html5shiv.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/_static/searchtools.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/_static/searchtools.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/_static/underscore-1.13.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/_static/underscore-1.13.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/_static/underscore.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/_static/underscore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/docs.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/docs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/genindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/objects.inv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/py-modindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/py-modindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/build/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/build/searchindex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/docs.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/docs.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/engine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/gameentity.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/gameentity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs0.2.0.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs0.2.0.log" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +37,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Setup Script" />
       </list>
     </option>
   </component>
@@ -25,13 +52,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
-  <component name="RunManager" selected="Python.run">
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;F:/Documents/GitHub/pygame-engine/docs/build&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Python docs.Sphinx Task in Sphinx Task in ">
     <configuration name="engine" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pygame-engine" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -95,6 +121,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Sphinx Task in Sphinx Task in " type="docs" factoryName="Sphinx task" nameIsGenerated="true">
+      <module name="pygame-engine" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="E:\miniconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="docutils_input_file" value="F:\Documents\GitHub\pygame-engine\docs\source" />
+      <option name="docutils_output_file" value="F:\Documents\GitHub\pygame-engine\docs\build" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="html" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.engine" />
+      <item itemvalue="Python.run" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python docs.Sphinx Task in Sphinx Task in " />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.run" />
@@ -106,7 +154,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b0ecfd24-6d2e-4a27-9208-19730c8798ae" name="Default Changelist" comment="" />
+      <changelist id="c3746061-0db3-40f0-9eaa-d68298d3c9d6" name="Changes" comment="" />
       <created>1645427224286</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

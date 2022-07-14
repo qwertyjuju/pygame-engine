@@ -271,3 +271,127 @@
 2022-07-14 00:50:25,491 | Engine V0.2.0 | INFO | quitting
 2022-07-14 00:50:25,492 | Engine V0.2.0 | INFO | _____________________________ ENGINE QUIT _____________________________ 
 
+2022-07-14 01:03:29,962 | Engine V0.2.0 | INFO | _____________________________GAME START_____________________________ 
+ Engine version: 0.2.0
+2022-07-14 01:03:29,965 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-07-14 01:03:29,965 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data|scenes.json', 'dataconfig': {'_preload': []}}
+2022-07-14 01:03:30,514 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-07-14 01:03:30,515 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-07-14 01:03:30,516 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-07-14 01:03:30,516 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-07-14 01:03:30,517 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x000001A83FEB7460>, 'scene2': <engine.gameobjects.Scene object at 0x000001A83FEB74C0>}
+2022-07-14 01:03:30,523 | Engine V0.2.0 | INFO | file : data\map\world.world - loaded successfully
+2022-07-14 01:03:30,524 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-07-14 01:03:30,525 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-07-14 01:03:30,852 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-07-14 01:03:30,872 | Engine V0.2.0 | INFO | Gamentities : {'World': <class 'src.main.World'>, 'Map': <class 'src.main.Map'>, 'Player': <class 'src.main.Player'>}
+2022-07-14 01:03:30,872 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-07-14 01:03:33,571 | Engine V0.2.0 | INFO | quitting
+2022-07-14 01:03:33,572 | Engine V0.2.0 | INFO | _____________________________ ENGINE QUIT _____________________________ 
+
+2022-07-14 01:24:10,158 | Engine V0.2.0 | INFO | _____________________________GAME START_____________________________ 
+ Engine version: 0.2.0
+2022-07-14 01:24:10,165 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-07-14 01:24:10,167 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data|scenes.json', 'dataconfig': {'_preload': []}}
+2022-07-14 01:24:10,808 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-07-14 01:24:10,809 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-07-14 01:24:10,809 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-07-14 01:24:10,810 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-07-14 01:24:10,810 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x0000020121142A10>, 'scene2': <engine.gameobjects.Scene object at 0x0000020121142B00>}
+2022-07-14 01:24:10,813 | Engine V0.2.0 | INFO | file : data\map\world.world - loaded successfully
+2022-07-14 01:24:10,814 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-07-14 01:24:10,815 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-07-14 01:24:11,336 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-07-14 01:24:11,367 | Engine V0.2.0 | INFO | Gamentities : {'World': <class 'src.main.World'>, 'Map': <class 'src.main.Map'>, 'Player': <class 'src.main.Player'>}
+2022-07-14 01:24:11,368 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-07-14 01:24:16,259 | Engine V0.2.0 | INFO | quitting
+2022-07-14 01:24:16,259 | Engine V0.2.0 | INFO | _____________________________ ENGINE QUIT _____________________________ 
+
+2022-07-14 01:30:57,235 | Engine V0.2.0 | INFO | _____________________________GAME START_____________________________ 
+ Engine version: 0.2.0 
+ operating system: Windows
+2022-07-14 01:30:57,236 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-07-14 01:30:57,236 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data|scenes.json', 'dataconfig': {'_preload': []}}
+2022-07-14 01:30:57,829 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-07-14 01:30:57,830 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-07-14 01:30:57,830 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-07-14 01:30:57,832 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-07-14 01:30:57,833 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x0000019FB6ED2AD0>, 'scene2': <engine.gameobjects.Scene object at 0x0000019FB6ED2BC0>}
+2022-07-14 01:30:57,835 | Engine V0.2.0 | INFO | file : data\map\world.world - loaded successfully
+2022-07-14 01:30:57,836 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-07-14 01:30:57,837 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-07-14 01:30:58,299 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-07-14 01:30:58,327 | Engine V0.2.0 | INFO | Gamentities : {'World': <class 'src.main.World'>, 'Map': <class 'src.main.Map'>, 'Player': <class 'src.main.Player'>}
+2022-07-14 01:30:58,327 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-07-14 01:30:59,115 | Engine V0.2.0 | INFO | quitting
+2022-07-14 01:30:59,116 | Engine V0.2.0 | INFO | _____________________________ ENGINE QUIT _____________________________ 
+
+2022-07-14 01:31:59,740 | Engine V0.2.0 | INFO | _____________________________GAME START_____________________________ 
+ Engine version: 0.2.0 
+ operating system: Windows 10
+2022-07-14 01:31:59,742 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-07-14 01:31:59,742 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data|scenes.json', 'dataconfig': {'_preload': []}}
+2022-07-14 01:32:00,260 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-07-14 01:32:00,260 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-07-14 01:32:00,261 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-07-14 01:32:00,262 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-07-14 01:32:00,262 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x000002A761F62AD0>, 'scene2': <engine.gameobjects.Scene object at 0x000002A761F62B30>}
+2022-07-14 01:32:00,265 | Engine V0.2.0 | INFO | file : data\map\world.world - loaded successfully
+2022-07-14 01:32:00,267 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-07-14 01:32:00,268 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-07-14 01:32:00,715 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-07-14 01:32:00,752 | Engine V0.2.0 | INFO | Gamentities : {'World': <class 'src.main.World'>, 'Map': <class 'src.main.Map'>, 'Player': <class 'src.main.Player'>}
+2022-07-14 01:32:00,753 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-07-14 01:32:01,235 | Engine V0.2.0 | INFO | quitting
+2022-07-14 01:32:01,235 | Engine V0.2.0 | INFO | _____________________________ ENGINE QUIT _____________________________ 
+
+2022-07-14 01:38:45,447 | Engine V0.2.0 | INFO | _____________________________GAME START_____________________________ 
+ Engine version: 0.2.0 
+ computer information: {'os': 'Windows', 'release': '10', 'python_ver': '3.10.4', 'processor': 'Intel64 Family 6 Model 142 Stepping 9, GenuineIntel'}
+2022-07-14 01:38:45,449 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-07-14 01:38:45,450 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data|scenes.json', 'dataconfig': {'_preload': []}}
+2022-07-14 01:38:45,908 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-07-14 01:38:45,909 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-07-14 01:38:45,910 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-07-14 01:38:45,911 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-07-14 01:38:45,911 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x000001C4E53F2B30>, 'scene2': <engine.gameobjects.Scene object at 0x000001C4E53F2B60>}
+2022-07-14 01:38:45,915 | Engine V0.2.0 | INFO | file : data\map\world.world - loaded successfully
+2022-07-14 01:38:45,916 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-07-14 01:38:45,916 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-07-14 01:38:46,278 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-07-14 01:38:46,307 | Engine V0.2.0 | INFO | Gamentities : {'World': <class 'src.main.World'>, 'Map': <class 'src.main.Map'>, 'Player': <class 'src.main.Player'>}
+2022-07-14 01:38:46,308 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-07-14 01:38:48,059 | Engine V0.2.0 | INFO | quitting
+2022-07-14 01:38:48,060 | Engine V0.2.0 | INFO | _____________________________ ENGINE QUIT _____________________________ 
+
+2022-07-14 01:50:15,424 | Engine V0.2.0 | INFO | _____________________________GAME START_____________________________ 
+ Engine version: 0.2.0 
+ computer information: {'os': 'Windows', 'release': '10', 'python_ver': '3.10.4', 'processor': 'Intel64 Family 6 Model 142 Stepping 9, GenuineIntel'}
+2022-07-14 01:50:15,426 | Engine V0.2.0 | INFO | file : data\settings.json - loaded successfully
+2022-07-14 01:50:15,426 | Engine V0.2.0 | INFO | Engine config : {'screensize': [1800, 1024], 'fullscreen': None, 'scenes': 'data|scenes.json', 'dataconfig': {'_preload': []}}
+2022-07-14 01:50:15,925 | Engine V0.2.0 | INFO | file : data\scenes.json - loaded successfully
+2022-07-14 01:50:15,926 | Engine V0.2.0 | INFO | scenes data: {'scenes': [{'ID': 'scene1', 'SceneAreas': []}, {'ID': 'scene2', 'SceneAreas': []}]}
+2022-07-14 01:50:15,926 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene1
+2022-07-14 01:50:15,927 | Engine V0.2.0 | INFO | Scene created successfully. SceneID: scene2
+2022-07-14 01:50:15,927 | Engine V0.2.0 | INFO | Display Manager initialised. 
+ screensize : [1800, 1024] 
+ scenes : {'scene1': <engine.gameobjects.Scene object at 0x0000026A3049A590>, 'scene2': <engine.gameobjects.Scene object at 0x0000026A3049A4D0>}
+2022-07-14 01:50:15,932 | Engine V0.2.0 | INFO | file : data\map\world.world - loaded successfully
+2022-07-14 01:50:15,933 | Engine V0.2.0 | INFO | file : data\map\map.json - loaded successfully
+2022-07-14 01:50:15,934 | Engine V0.2.0 | INFO | SceneArea created successfully. SceneAreaID: Map
+2022-07-14 01:50:16,280 | Engine V0.2.0 | INFO | file : data\map\gamemap.jpg - loaded successfully
+2022-07-14 01:50:16,306 | Engine V0.2.0 | INFO | Gamentities : {'World': <class 'src.main.World'>, 'Map': <class 'src.main.Map'>, 'Player': <class 'src.main.Player'>}
+2022-07-14 01:50:16,307 | Engine V0.2.0 | INFO | engine initialised successfully
+2022-07-14 01:50:16,852 | Engine V0.2.0 | INFO | quitting
+2022-07-14 01:50:16,853 | Engine V0.2.0 | INFO | _____________________________ ENGINE QUIT _____________________________ 
+

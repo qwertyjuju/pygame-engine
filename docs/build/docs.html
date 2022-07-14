@@ -72,6 +72,75 @@
 <dt class="sig sig-object py" id="engine.engine.Engine">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">engine.engine.</span></span><span class="sig-name descname"><span class="pre">Engine</span></span><a class="headerlink" href="#engine.engine.Engine" title="Permalink to this definition"></a></dt>
 <dd><p>main class for the engine</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="engine.engine.Engine.add_event_listener">
+<span class="sig-name descname"><span class="pre">add_event_listener</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">button</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">funcparams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cooldown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#engine.engine.Engine.add_event_listener" title="Permalink to this definition"></a></dt>
+<dd><p>adds event listener to the event manager
+:param type:
+:param button:
+:param func:
+:param funcparams:
+:param cooldown:
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="engine.engine.Engine.create_scene">
+<span class="sig-name descname"><span class="pre">create_scene</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sceneid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sceneareas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#engine.engine.Engine.create_scene" title="Permalink to this definition"></a></dt>
+<dd><p>creates a scene
+:param sceneid:
+:param sceneareas:
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="engine.engine.Engine.get_config">
+<span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#engine.engine.Engine.get_config" title="Permalink to this definition"></a></dt>
+<dd><p>returns the engine configuration loaded at the engine startup
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="engine.engine.Engine.get_data">
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datapath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#engine.engine.Engine.get_data" title="Permalink to this definition"></a></dt>
+<dd><p>gets data from the datamanager. if the data file was not loaded, it will load it automatically
+:param datapath:
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="engine.engine.Engine.get_scene">
+<span class="sig-name descname"><span class="pre">get_scene</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sceneid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#engine.engine.Engine.get_scene" title="Permalink to this definition"></a></dt>
+<dd><p>returns scene with scene id
+:param sceneid:
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="engine.engine.Engine.log">
+<span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logtype</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">texts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#engine.engine.Engine.log" title="Permalink to this definition"></a></dt>
+<dd><p>creates a log message
+:param logtype: log type for the message: info, warning or error
+:param texts: different texts to be logged
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="engine.engine.Engine.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">configfilepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#engine.engine.Engine.run" title="Permalink to this definition"></a></dt>
+<dd><p>The run function is to be called at startup
+:param configfilepath:
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="engine.engine.Engine.set_logger">
+<span class="sig-name descname"><span class="pre">set_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logspath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#engine.engine.Engine.set_logger" title="Permalink to this definition"></a></dt>
+<dd><p>inits the logger
+:param logspath: log path. By default it will be in the current working directory
+:return:</p>
+</dd></dl>
+
 </dd></dl>
 
 <span class="target" id="module-engine.funcs"></span><span class="target" id="module-engine.gameobjects"></span><dl class="py class">
@@ -152,6 +221,35 @@ controlling a part of the diplay.</p>
 <dt class="sig sig-object py" id="engine.gameobjects.SceneAreaObject">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">engine.gameobjects.</span></span><span class="sig-name descname"><span class="pre">SceneAreaObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#engine.gameobjects.SceneAreaObject" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
+
+<span class="target" id="module-engine.gameentity"></span><dl class="py class">
+<dt class="sig sig-object py" id="engine.gameentity.GameEntity">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">engine.gameentity.</span></span><span class="sig-name descname"><span class="pre">GameEntity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#engine.gameentity.GameEntity" title="Permalink to this definition"></a></dt>
+<dd><p>Base class of all game entities. Each game entity as access to the engine.
+If the Engine was not initialized, no objects will be created. Each game entity
+has an automatic distributed ID.
+Each entity is added in a dictionary with their entity id.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="engine.gameentity.GameEntity.set_name">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#engine.gameentity.GameEntity.set_name" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the name of the class for the engine</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="engine.gameentity.GameEntity.set_subclasses">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_subclasses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#engine.gameentity.GameEntity.set_subclasses" title="Permalink to this definition"></a></dt>
+<dd><p>Gets all the classes that inherits from class. This function can be called in</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="engine.gameentity.GameEntity.set_update">
+<span class="sig-name descname"><span class="pre">set_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#engine.gameentity.GameEntity.set_update" title="Permalink to this definition"></a></dt>
+<dd><p>if value is true, the entity is added to the engine update list
+:param value:
+:return:</p>
+</dd></dl>
+
+</dd></dl>
 
 </section>
 

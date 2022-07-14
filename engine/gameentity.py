@@ -40,10 +40,11 @@ class GameEntity:
     def init(self, *args, **kwargs):
         pass
 
-    def set_update(self, value):
+    def set_update(self, value:bool):
         """
-        Sets the entity _update attribute to the value. The entity is also 
-        added or deleted from the engine update list.
+        if value is true, the entity is added to the engine update list
+        :param value:
+        :return:
         """
         if value:
             self.engine.e_add_updatedentity(self)

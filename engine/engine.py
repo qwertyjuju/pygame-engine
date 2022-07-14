@@ -3,6 +3,7 @@ import logging
 import logging.handlers
 import sys
 import weakref
+import platform
 from pathlib import Path
 
 import pygame as pg
@@ -43,6 +44,12 @@ class Engine:
         """
         self._logger = logging.getLogger('Engine V' + __version__)
         self._logger.setLevel(logging.DEBUG)
+        self.computer_info ={
+            "os": platform.system(),
+            "release": platform.release(),
+            "python_ver": platform.python_version(),
+            "processor": platform.processor()
+        }
         formatter = logging.Formatter('%(asctime)s | %(name)s | %(levelname)s | %(message)s')
         sh = logging.StreamHandler()
         sh.setLevel(logging.INFO)
@@ -56,10 +63,15 @@ class Engine:
         self._logger.addHandler(fh)
 
     def run(self, configfilepath=None):
+        """
+        The run function is to be called at startup
+        :param configfilepath:
+        :return:
+        """
         current_dir = Path.cwd()
         self.log("info",
-                 "_____________________________GAME START_____________________________ \n Engine version:",
-                 __version__)
+                 f"_____________________________GAME START_____________________________ \n Engine version: {__version__} \n",
+                 f"computer information: {self.computer_info}")
         self._datamanager = managers.DataManager()
         for path in self._DEPENDENCIES["set_path"]:
             self._datamanager.set_path(path)
@@ -88,6 +100,11 @@ class Engine:
             self._displaymanager.update()
 
     def set_logger(self, logspath=None):
+        """
+        inits the logger
+        :param logspath: log path. By default it will be in the current working directory
+        :return:
+        """
         self.logging = 1
         if logspath:
             logspath = Path(logspath)
@@ -99,6 +116,12 @@ class Engine:
             self._init_logger()
 
     def log(self, logtype, *texts):
+        """
+        creates a log message
+        :param logtype: log type for the message: info, warning or error
+        :param texts: different texts to be logged
+        :return:
+        """
         if self.logging:
             text = " ".join(texts)
             if logtype.lower() == "info":
@@ -111,6 +134,15 @@ class Engine:
                 self._logger.warning("message type incorrect. Message: " + text)
 
     def add_event_listener(self, type, button, func, funcparams, cooldown=100):
+        """
+        adds event listener to the event manager
+        :param type:
+        :param button:
+        :param func:
+        :param funcparams:
+        :param cooldown:
+        :return:
+        """
         if type == "click":
             self._eventmanager.add_click_listener(button, func, funcparams, cooldown)
         if type == "keyboard":
@@ -118,16 +150,36 @@ class Engine:
         else:
             self.log("warning", "eventlistener type not know, listener not created.")
         
-    def create_scene(self, sceneid, sceneareas=None):
+    def create_scene(self, sceneid:int, sceneareas=None):
+        """
+        creates a scene
+        :param sceneid:
+        :param sceneareas:
+        :return:
+        """
         return self._displaymanager.create_scene(sceneid, sceneareas)
 
     def get_data(self, datapath):
+        """
+        gets data from the datamanager. if the data file was not loaded, it will load it automatically
+        :param datapath:
+        :return:
+        """
         return self._datamanager[datapath]
 
     def get_scene(self, sceneid):
+        """
+        returns scene with scene id
+        :param sceneid:
+        :return:
+        """
         return self._displaymanager[sceneid]
 
     def get_config(self):
+        """
+        returns the engine configuration loaded at the engine startup
+        :return:
+        """
         return self.config
         
     def e_add_updatedentity(self, entity):

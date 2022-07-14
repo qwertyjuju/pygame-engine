@@ -8,3 +8,6 @@ API documentation!
 
 .. automodule:: engine.gameobjects
     :members:
+
+.. automodule:: engine.gameentity
+    :members:
