@@ -25,6 +25,7 @@ class Engine:
         "import": ["src"],
         "set_path": ["data"]
     }
+
     def __init__(self):
         self.logging = 0
         self.updatedict = {}
@@ -32,7 +33,6 @@ class Engine:
         gameentity.GameEntity.e_set_engine(self)
         managers.Manager.e_set_engine(self)
         pg.init()
-
 
     def _init_logger(self, logspath=Path(f"logs{__version__}.log")):
         """
@@ -68,7 +68,6 @@ class Engine:
         :param configfilepath:
         :return:
         """
-        current_dir = Path.cwd()
         self.log("info",
                  f"_____________________________GAME START_____________________________ \n Engine version: {__version__} \n",
                  f"computer information: {self.computer_info}")
@@ -78,8 +77,11 @@ class Engine:
         if configfilepath:
             self.config = self._datamanager[configfilepath]
             self.log("info", "Engine config :", str(self.config))
-            for path in self.config['dataconfig']['_preload']:
-                self.get_data(path)
+            try:
+                for path in self.config['dataconfig']['preload']:
+                    self.get_data(path)
+            except KeyError:
+                pass
         else:
             self.config= {
                 "screensize":None

@@ -4,7 +4,7 @@
 	"scenes": "data|scenes.json",
 	"dataconfig":
 	{
-		"_preload":[
+		"preload":[
 		]
 	}
 }
