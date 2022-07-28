@@ -5,7 +5,7 @@ import json
 def main(sheight, swidth):
     pg.init()
     screen = pg.display.set_mode((sheight, swidth))
-    surface = pg.image.load("data\\map\\gamemap.jpg").convert_alpha()
+    surface = pg.image.load("data/map/gamemap.jpg").convert_alpha()
     #surface =surface.convert()
     pos=[0, 0]
     timer = pg.time.Clock()

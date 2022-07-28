@@ -23,7 +23,8 @@ class Engine:
     """
     _DEPENDENCIES = {
         "import": ["src"],
-        "set_path": ["data"]
+        "set_path": ["data"],
+        "extensions":[]
     }
 
     def __init__(self):

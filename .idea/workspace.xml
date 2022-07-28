@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3746061-0db3-40f0-9eaa-d68298d3c9d6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/engine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/index.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/managers.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/managers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,11 +31,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "F:/Documents/GitHub/cours_info"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;F:/Documents/GitHub/cours_info&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python docs.Sphinx Task in Sphinx Task in ">
     <configuration name="engine" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pygame-engine" />

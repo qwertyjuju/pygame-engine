@@ -273,6 +273,10 @@ class EventManager(Manager):
         for listener in self._updatelist:
             listener.update()
 
+    def add_clickable_listener(self, button, func, funcparams, cooldown):
+        if button in range(1,6):
+            self._listeners["click"][button]
+
     def add_click_listener(self, button, func, funcparams, cooldown):
         if button in range(1,6):
             self._listeners["click"][button].append(Listener(func, funcparams, cooldown))
@@ -284,7 +288,6 @@ class EventManager(Manager):
             self._listeners["keyboard"][pg.key.key_code(button)].append(Listener(func, funcparams, cooldown))
         else:
             self.engine.log("warning", "eventlistener button, {button}, not know, listener not created.")
-
 
     def add_to_updatel(self, listener):
         self._updatelist.append(listener)
@@ -322,7 +325,15 @@ class Listener:
     def e_set_manager(cls, manager):
         cls.manager = manager
 
-
+class ClickableListener(Listener):
+    def __init__(self, func, rect:(list, pg.Rect), funcparams=None, cooldown=100):
+        super().__init__(func, funcparams, cooldown)
+        self.zone = rect
+    def __contains__(self, pos):
+        if pos in self.zone:
+            return 1
+        else:
+            return 0
 """
             if event.type == pg.QUIT:
                 self.engine.quit()
